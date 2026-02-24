@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=Amiri:wght@400;700&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  --color-primary: #047857;
+  --color-primary-dark: #065f46;
+  --color-primary-light: #059669;
+
+  --color-accent: #c4956a;
+
+  --color-cream: #faf8f5;
+  --color-ink: #1a1a2e;
+
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-arabic: "Amiri", serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-cream);
+  font-family: var(--font-body);
+  color: var(--color-ink);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+.font-arabic {
+  font-family: var(--font-arabic);
+}
+
+.islamic-border {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-accent) 0px,
+    var(--color-accent) 4px,
+    transparent 4px,
+    transparent 12px
+  );
+  height: 3px;
+  opacity: 0.5;
+}
+
+.islamic-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.islamic-divider::before,
+.islamic-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-accent),
+    transparent
+  );
+}
+
+.page-enter {
+  animation: pageIn 0.3s ease-out;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes beadPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.bead-press {
+  animation: beadPulse 0.15s ease-in-out;
+}
+
+.pb-nav {
+  padding-bottom: 5.5rem;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
