@@ -6,15 +6,24 @@ import DateCard from "@/features/home/components/DateCard";
 import QuickAccess from "@/features/home/components/QuickAccess";
 import PrayerSchedule from "@/features/home/components/PrayerSchedule";
 import DailyInspiration from "@/features/home/components/DailyInspiration";
+import { usePrayerTimes } from "@/features/prayer/hooks/usePrayerTimes";
 
 export default function HomePage() {
+  const { data, loading, city } = usePrayerTimes();
+
   return (
     <div className="pb-24 bg-gray-50 min-h-screen">
       <Header />
-      <HeroSection />
+
+      <HeroSection
+        data={data}
+        loading={loading}
+        city={city || "Mencari Lokasi..."}
+      />
+
       <DateCard />
       <QuickAccess />
-      <PrayerSchedule />
+      <PrayerSchedule timings={data?.timings} />
       <DailyInspiration />
     </div>
   );
