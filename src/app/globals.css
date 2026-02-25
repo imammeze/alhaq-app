@@ -119,3 +119,7 @@ h6 {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+nextjs-portal {
+  display: none !important;
+}
