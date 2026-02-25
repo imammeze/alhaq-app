@@ -54,20 +54,23 @@ export const usePrayerTimes = () => {
         if (!city || city === "Purwokerto") {
           try {
             const geoRes = await fetch(
-              `https://nominatim.openstreetmap.org/reverse?format=json&lat=${coords.lat}&lon=${coords.lng}`
+              `/api/geocode?lat=${coords.lat}&lng=${coords.lng}`
             );
+
+            if (!geoRes.ok) throw new Error("Gagal reverse geocode");
+
             const geoData = await geoRes.json();
 
             const detectedCity =
-              geoData.address.city ||
-              geoData.address.town ||
-              geoData.address.village ||
-              geoData.address.county ||
+              geoData.address?.city ||
+              geoData.address?.town ||
+              geoData.address?.village ||
+              geoData.address?.county ||
               "Purwokerto";
 
             setCity(detectedCity);
           } catch (geoError) {
-            console.error("Gagal reverse geocode", geoError);
+            console.error("Gagal ambil nama kota:", geoError);
           }
         }
       } catch (err) {
