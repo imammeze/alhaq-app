@@ -13,3 +13,15 @@ export interface TrackerStats {
   remaining: number;
   isAllCompleted: boolean;
 }
+
+export interface DailyTargetEntity {
+  id: number;
+  title: string;
+  subtitle: string;
+  iconName: string;
+  color: string;
+  bg: string;
+  isCompleted: boolean;
+}
+
+export type NewTargetForm = Omit<DailyTargetEntity, "id" | "isCompleted">;
