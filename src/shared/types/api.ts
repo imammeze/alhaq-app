@@ -63,3 +63,17 @@ export interface SurahResponse {
   message: string;
   data: Surah[];
 }
+
+export interface GuideItemAPI {
+  id: number;
+  name: string;
+  arabic: string;
+  latin: string;
+  terjemahan: string;
+}
+
+export interface QalbunResponse {
+  status: number;
+  message: string;
+  results: GuideItemAPI[];
+}
