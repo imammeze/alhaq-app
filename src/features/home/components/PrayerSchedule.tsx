@@ -69,9 +69,7 @@ export default function PrayerSchedule({ timings }: PrayerScheduleProps) {
             <div
               key={prayer.name}
               className="flex items-center justify-between group">
-              {/* Kiri: Indikator & Nama */}
               <div className="flex items-center gap-4">
-                {/* Dot Indicator */}
                 <div
                   className={`w-2.5 h-2.5 rounded-full transition-colors duration-300 ${
                     isNext
@@ -82,7 +80,6 @@ export default function PrayerSchedule({ timings }: PrayerScheduleProps) {
                   }`}
                 />
 
-                {/* Nama Sholat */}
                 <span
                   className={`text-sm font-medium transition-colors ${
                     isNext ? "text-emerald-700 font-bold" : "text-gray-600"
@@ -91,16 +88,13 @@ export default function PrayerSchedule({ timings }: PrayerScheduleProps) {
                 </span>
               </div>
 
-              {/* Kanan: Badge (Optional) & Jam */}
               <div className="flex items-center gap-3">
-                {/* Badge 'Akan Datang' hanya jika isNext */}
                 {isNext && (
                   <span className="px-2 py-0.5 bg-emerald-600 text-white text-[10px] font-bold rounded flex items-center shadow-sm animate-in fade-in zoom-in duration-300">
                     Akan Datang
                   </span>
                 )}
 
-                {/* Jam */}
                 <span
                   className={`text-sm font-mono transition-colors ${
                     isNext ? "text-emerald-700 font-bold" : "text-gray-600"

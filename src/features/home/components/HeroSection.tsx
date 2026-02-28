@@ -34,7 +34,6 @@ export default function HeroSection({
       const diff = targetDate.getTime() - now.getTime();
 
       if (diff <= 0) {
-        // Jika waktu habis, trigger re-render untuk ambil sholat berikutnya
         setTimeLeft("00:00:00");
       } else {
         const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
@@ -46,14 +45,13 @@ export default function HeroSection({
             .toString()
             .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`
         );
-        setNextPrayerInfo({ name: nextPrayerName, time: "" }); // Time display opsional di sini
+        setNextPrayerInfo({ name: nextPrayerName, time: "" });
       }
     }, 1000);
 
     return () => clearInterval(timer);
   }, [data]);
 
-  // Skeleton Loading State
   if (loading || !data) {
     return (
       <div className="px-5 mt-2">
@@ -68,7 +66,6 @@ export default function HeroSection({
   return (
     <div className="px-5 mt-2">
       <div className="bg-[#064e3b] rounded-3xl p-6 text-white shadow-lg relative overflow-hidden">
-        {/* Background Pattern (Opsional agar lebih cantik) */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
 
         <div className="flex items-center gap-2 mb-6 relative z-10">
