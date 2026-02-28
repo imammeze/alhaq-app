@@ -17,7 +17,7 @@ export default async function SurahDetailPage({ params }: PageProps) {
 
   return (
     <div className="pb-24 bg-gray-50 min-h-screen">
-      <header className="px-5 pt-6 pb-4 bg-white sticky top-0 z-20 shadow-sm flex items-center justify-between">
+      <header className="px-5 pt-6 pb-4 bg-white shadow-sm flex items-center justify-between">
         <Link
           href="/quran"
           className="p-2 -ml-2 text-gray-600 hover:bg-gray-100 rounded-full transition-colors">

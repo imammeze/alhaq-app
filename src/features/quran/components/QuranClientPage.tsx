@@ -31,7 +31,7 @@ export default function QuranClientPage({ surahs }: QuranClientPageProps) {
 
   return (
     <div className="pb-24 bg-gray-50 min-h-screen">
-      <header className="px-5 pt-6 pb-4 bg-white sticky top-0 z-10 shadow-sm">
+      <header className="px-5 pt-6 pb-4 bg-white shadow-sm">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h1 className="text-xl font-bold text-gray-800">Al-Qur'an</h1>
