@@ -11,6 +11,7 @@ interface PageHeaderProps {
   rightAction?: React.ReactNode;
   leftAction?: React.ReactNode;
   className?: string;
+  onBack?: () => void;
 }
 
 export function PageHeader({
@@ -20,8 +21,17 @@ export function PageHeader({
   rightAction,
   leftAction,
   className = "",
+  onBack,
 }: PageHeaderProps) {
   const router = useRouter();
+
+  const handleBack = () => {
+    if (onBack) {
+      onBack();
+    } else {
+      router.back();
+    }
+  };
 
   return (
     <header
@@ -31,7 +41,7 @@ export function PageHeader({
         <div className="flex items-center gap-3 min-w-0">
           {showBackButton && (
             <button
-              onClick={() => router.back()}
+              onClick={handleBack}
               className="p-2 -ml-2 rounded-full text-gray-600 hover:bg-gray-100 transition-colors"
               aria-label="Go back">
               <ArrowLeftIcon className="w-5 h-5" />
