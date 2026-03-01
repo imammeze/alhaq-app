@@ -34,7 +34,7 @@ export default function BottomNavigation() {
     <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 z-50 w-full max-w-lg bg-white border-t border-gray-100 rounded-t-2xl shadow-[0_-4px_20px_rgba(0,0,0,0.06)]">
       <div
         ref={scrollRef}
-        className="flex items-center px-2 py-2 overflow-x-auto no-scrollbar">
+        className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory">
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
           const isActive = currentId === item.id;
@@ -44,7 +44,7 @@ export default function BottomNavigation() {
               key={item.id}
               data-nav-id={item.id}
               onClick={() => router.push(item.path)}
-              className={`flex flex-col items-center justify-center min-w-16 py-1 gap-1 ${
+              className={`flex-none w-[20%] sm:w-[14.28%] snap-center py-3 flex flex-col items-center justify-center gap-1 relative group ${
                 isActive ? "text-[#064e3b]" : "text-gray-400"
               }`}>
               <div
