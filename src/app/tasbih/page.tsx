@@ -1,76 +1,89 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   HistoryIcon,
   SettingsIcon,
   RotateCcwIcon,
   MinusIcon,
   CircleDotIcon,
-  XIcon,
-  CheckIcon,
 } from "lucide-react";
-
-const DZIKIR_OPTIONS = [
-  {
-    id: "subhanallah",
-    label: "Subhanallah",
-    arabic: "سُبْحَانَ ٱللَّٰهِ",
-    target: 33,
-  },
-  {
-    id: "alhamdulillah",
-    label: "Alhamdulillah",
-    arabic: "ٱلْحَمْدُ لِلَّٰهِ",
-    target: 33,
-  },
-  {
-    id: "allahuakbar",
-    label: "Allahu Akbar",
-    arabic: "ٱللَّٰهُ أَكْبَرُ",
-    target: 33,
-  },
-  {
-    id: "tahlil",
-    label: "Laa ilaaha illallah",
-    arabic: "لَا إِلَٰهَ إِلَّا ٱللَّٰهُ",
-    target: 100,
-  },
-  {
-    id: "istighfar",
-    label: "Astaghfirullah",
-    arabic: "أَسْتَغْفِرُ اللَّهَ",
-    target: 100,
-  },
-  {
-    id: "shalawat",
-    label: "Shalawat Nabi",
-    arabic: "اللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ",
-    target: 100,
-  },
-  {
-    id: "bebas",
-    label: "Target Bebas",
-    arabic: "بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم",
-    target: null,
-  },
-];
+import {
+  DZIKIR_OPTIONS,
+  HistoryItem,
+} from "@/features/tasbih/constants/dzikir";
+import {
+  GoalReachedModal,
+  HistoryModal,
+  SelectorModal,
+  ResetModal,
+} from "@/features/tasbih/components/TasbihModals";
 
 const RADIUS = 45;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
 export default function TasbihPage() {
   const [count, setCount] = useState<number>(0);
+
   const [isSelectorOpen, setIsSelectorOpen] = useState(false);
+  const [isGoalReachedOpen, setIsGoalReachedOpen] = useState(false);
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+  const [isResetModalOpen, setIsResetModalOpen] = useState(false);
+
   const [activeDzikirId, setActiveDzikirId] = useState<string>("subhanallah");
+  const [history, setHistory] = useState<HistoryItem[]>([]);
+
+  useEffect(() => {
+    const savedHistory = localStorage.getItem("tasbih_history");
+    if (savedHistory) setHistory(JSON.parse(savedHistory));
+  }, []);
+
+  const saveHistory = (newHistory: HistoryItem[]) => {
+    setHistory(newHistory);
+    localStorage.setItem("tasbih_history", JSON.stringify(newHistory));
+  };
 
   const activeDzikir =
     DZIKIR_OPTIONS.find((d) => d.id === activeDzikirId) || DZIKIR_OPTIONS[0];
-
   const effectiveTarget = activeDzikir.target || 100;
   const progress = count % effectiveTarget;
   const strokeDashoffset =
     CIRCUMFERENCE - (CIRCUMFERENCE * progress) / effectiveTarget;
+
+  const handleTap = () => {
+    const newCount = count + 1;
+
+    if (activeDzikir.target && newCount === activeDzikir.target) {
+      setIsGoalReachedOpen(true);
+      setTimeout(() => setIsGoalReachedOpen(false), 3000);
+
+      const now = new Date();
+      const dateStr = new Intl.DateTimeFormat("id-ID", {
+        day: "numeric",
+        month: "short",
+      }).format(now);
+      const timeStr = new Intl.DateTimeFormat("id-ID", {
+        hour: "2-digit",
+        minute: "2-digit",
+      })
+        .format(now)
+        .replace(":", ".");
+
+      saveHistory([
+        {
+          id: Date.now().toString(),
+          title: activeDzikir.label,
+          count: activeDzikir.target,
+          date: `${dateStr}, ${timeStr}`,
+        },
+        ...history,
+      ]);
+
+      setCount(0);
+    } else {
+      setCount(newCount);
+    }
+  };
 
   const handleSelectDzikir = (id: string) => {
     setActiveDzikirId(id);
@@ -78,16 +91,46 @@ export default function TasbihPage() {
     setIsSelectorOpen(false);
   };
 
+  const handleConfirmReset = () => {
+    if (count > 0) {
+      const now = new Date();
+      const dateStr = new Intl.DateTimeFormat("id-ID", {
+        day: "numeric",
+        month: "short",
+      }).format(now);
+      const timeStr = new Intl.DateTimeFormat("id-ID", {
+        hour: "2-digit",
+        minute: "2-digit",
+      })
+        .format(now)
+        .replace(":", ".");
+
+      saveHistory([
+        {
+          id: Date.now().toString(),
+          title: activeDzikir.label,
+          count: count,
+          date: `${dateStr}, ${timeStr}`,
+        },
+        ...history,
+      ]);
+    }
+
+    setCount(0);
+    setIsResetModalOpen(false);
+  };
+
   return (
     <div className="pb-24 bg-gray-50 min-h-screen flex flex-col relative overflow-hidden">
       <header className="px-5 pt-6 pb-4 flex items-center justify-between">
         <h1 className="text-lg font-bold text-gray-800">Tasbih Digital</h1>
-
         <div className="flex items-center gap-2">
-          <button className="p-2 rounded-lg bg-white text-gray-400 hover:bg-gray-100 shadow-sm">
+          <button
+            onClick={() => setIsHistoryOpen(true)}
+            className="p-2 rounded-lg bg-white text-gray-400 hover:bg-gray-100 shadow-sm active:scale-95 transition">
             <HistoryIcon className="w-5 h-5" />
           </button>
-          <button className="p-2 rounded-lg bg-white text-gray-400 hover:bg-gray-100 shadow-sm">
+          <button className="p-2 rounded-lg bg-white text-gray-400 hover:bg-gray-100 shadow-sm active:scale-95 transition">
             <SettingsIcon className="w-5 h-5" />
           </button>
         </div>
@@ -104,15 +147,14 @@ export default function TasbihPage() {
             {activeDzikir.label}
           </span>
           <span className="bg-gray-100 text-gray-500 text-xs font-bold px-2 py-0.5 rounded">
-            {activeDzikir.target ? activeDzikir.target : "∞"}
+            {activeDzikir.target || "∞"}
           </span>
         </button>
 
         <div
           className="relative w-72 h-72 flex items-center justify-center cursor-pointer active:scale-95 transition-transform"
-          onClick={() => setCount((c) => c + 1)}>
+          onClick={handleTap}>
           <div className="absolute inset-0 bg-white rounded-full shadow-[0_0_60px_rgba(0,0,0,0.05)]" />
-
           <svg
             className="absolute inset-0 w-full h-full -rotate-90 p-4"
             viewBox="0 0 100 100">
@@ -137,7 +179,6 @@ export default function TasbihPage() {
               className="transition-all duration-300"
             />
           </svg>
-
           <div className="text-center relative z-10">
             <h1 className="text-8xl font-bold text-slate-900 font-mono tracking-tighter">
               {count}
@@ -158,7 +199,9 @@ export default function TasbihPage() {
 
         <div className="flex items-center gap-4 mt-8">
           <button
-            onClick={() => setCount(0)}
+            onClick={() => {
+              if (count > 0) setIsResetModalOpen(true);
+            }}
             className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-400 hover:bg-gray-50 active:scale-95 transition-all">
             <RotateCcwIcon className="w-5 h-5" />
           </button>
@@ -171,66 +214,32 @@ export default function TasbihPage() {
         </div>
       </div>
 
-      {isSelectorOpen && (
-        <div className="fixed inset-0 z-999 w-full max-w-lg mx-auto flex flex-col justify-end">
-          <div
-            className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm animate-in fade-in duration-300"
-            onClick={() => setIsSelectorOpen(false)}
-          />
+      <GoalReachedModal
+        isOpen={isGoalReachedOpen}
+        onClose={() => setIsGoalReachedOpen(false)}
+        activeDzikir={activeDzikir}
+      />
 
-          <div className="relative bg-white w-full rounded-t-[2.5rem] pb-safe animate-in slide-in-from-bottom-full duration-300">
-            <div className="w-12 h-1.5 bg-gray-200 rounded-full mx-auto mt-4 mb-2" />
+      <HistoryModal
+        isOpen={isHistoryOpen}
+        onClose={() => setIsHistoryOpen(false)}
+        history={history}
+        onDelete={(id) => saveHistory(history.filter((h) => h.id !== id))}
+      />
 
-            <div className="px-6 pt-2 pb-8">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-base font-bold text-gray-800">
-                  Pilih Dzikir
-                </h2>
-                <button
-                  onClick={() => setIsSelectorOpen(false)}
-                  className="p-1.5 bg-gray-100 text-gray-500 rounded-full hover:bg-gray-200 transition-colors">
-                  <XIcon className="w-4 h-4" />
-                </button>
-              </div>
+      <SelectorModal
+        isOpen={isSelectorOpen}
+        onClose={() => setIsSelectorOpen(false)}
+        activeDzikirId={activeDzikirId}
+        onSelect={handleSelectDzikir}
+      />
 
-              <div className="space-y-2.5 max-h-[60vh] overflow-y-auto no-scrollbar pb-10">
-                {DZIKIR_OPTIONS.map((dzikir) => {
-                  const isActive = activeDzikirId === dzikir.id;
-
-                  return (
-                    <button
-                      key={dzikir.id}
-                      onClick={() => handleSelectDzikir(dzikir.id)}
-                      className={`w-full p-4 rounded-2xl border text-left flex items-center justify-between transition-all active:scale-[0.98] ${
-                        isActive
-                          ? "border-[#064e3b] bg-emerald-50/50"
-                          : "border-gray-100 bg-white hover:border-emerald-200"
-                      }`}>
-                      <div className="flex flex-col gap-1">
-                        <span
-                          className={`text-sm font-bold ${
-                            isActive ? "text-[#064e3b]" : "text-gray-800"
-                          }`}>
-                          {dzikir.label}
-                        </span>
-                        <span className="text-[10px] text-gray-400 font-medium">
-                          {dzikir.target
-                            ? `Target: ${dzikir.target}`
-                            : "Tanpa Batas"}
-                        </span>
-                      </div>
-
-                      {isActive && (
-                        <CheckIcon className="w-5 h-5 text-[#064e3b]" />
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      <ResetModal
+        isOpen={isResetModalOpen}
+        onClose={() => setIsResetModalOpen(false)}
+        onConfirm={handleConfirmReset}
+        currentCount={count}
+      />
     </div>
   );
 }
