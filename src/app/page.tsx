@@ -5,14 +5,14 @@ import HeroSection from "@/features/home/components/HeroSection";
 import DateCard from "@/features/home/components/DateCard";
 import QuickAccess from "@/features/home/components/QuickAccess";
 import PrayerSchedule from "@/features/home/components/PrayerSchedule";
-import DailyInspiration from "@/features/home/components/DailyInspiration";
+import EventSection from "@/features/home/components/EventSection";
 import { usePrayerTimes } from "@/features/prayer/hooks/usePrayerTimes";
 
 export default function HomePage() {
   const { data, loading, city } = usePrayerTimes();
 
   return (
-    <div className="pb-24 bg-gray-50 min-h-screen">
+    <div className="pb-20 bg-gray-50 min-h-screen">
       <Header />
 
       <HeroSection
@@ -24,7 +24,7 @@ export default function HomePage() {
       <DateCard />
       <QuickAccess />
       <PrayerSchedule timings={data?.timings} />
-      <DailyInspiration />
+      <EventSection />
     </div>
   );
 }
