@@ -20,7 +20,7 @@ export const PrayerGuideView = ({
   const activeList = subTab === "niat" ? niatList : bacaanList;
   const ActiveIcon = subTab === "niat" ? HeartIcon : BookOpenIcon;
   const activeColor =
-    subTab === "niat" ? "text-pink-500 bg-pink-50" : "text-blue-600 bg-blue-50";
+    subTab === "niat" ? "text-pink-500 bg-pink-50" : "text-rose-600 bg-rose-50";
 
   const toggleExpand = (id: number) => {
     setExpandedId(expandedId === id ? null : id);

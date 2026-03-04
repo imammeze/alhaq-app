@@ -148,7 +148,7 @@ export default function ZakatClientPage({ goldPrice }: ZakatClientProps) {
             onClick={() => setViewMode("riwayat")}
             className={`px-3 py-1.5 rounded-lg text-[10px] font-bold flex items-center gap-1.5 transition-all ${
               viewMode === "riwayat"
-                ? "bg-[#064e3b] text-white shadow-sm"
+                ? "bg-[#4c0519] text-white shadow-sm"
                 : "text-gray-400 hover:text-gray-600"
             }`}>
             <HistoryIcon className="w-3.5 h-3.5" /> Riwayat
@@ -221,7 +221,7 @@ export default function ZakatClientPage({ goldPrice }: ZakatClientProps) {
           <div className="px-5">
             <div
               className={`rounded-3xl p-6 text-white relative overflow-hidden transition-colors duration-500 shadow-lg ${
-                isWajibZakat ? "bg-[#064e3b]" : "bg-[#a3a3a3]"
+                isWajibZakat ? "bg-[#4c0519]" : "bg-[#a3a3a3]"
               }`}>
               {isWajibZakat && (
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
@@ -234,7 +234,7 @@ export default function ZakatClientPage({ goldPrice }: ZakatClientProps) {
                 <span
                   className={`px-2 py-1 rounded-lg text-[10px] font-bold flex items-center gap-1 ${
                     isWajibZakat
-                      ? "bg-[#dcf59f] text-[#064e3b]"
+                      ? "bg-[#fde047] text-[#4c0519]"
                       : "bg-white/20 text-white"
                   }`}>
                   {isWajibZakat ? (
@@ -261,7 +261,7 @@ export default function ZakatClientPage({ goldPrice }: ZakatClientProps) {
                 <div className="w-full bg-white/20 h-2 rounded-full mb-2 overflow-hidden">
                   <div
                     className={`h-full rounded-full transition-all duration-700 ${
-                      isWajibZakat ? "bg-[#dcf59f]" : "bg-white"
+                      isWajibZakat ? "bg-[#fde047]" : "bg-white"
                     }`}
                     style={{ width: `${progressPercent}%` }}
                   />
@@ -279,7 +279,7 @@ export default function ZakatClientPage({ goldPrice }: ZakatClientProps) {
                 disabled={!isWajibZakat}
                 className={`w-full py-3.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all active:scale-95 relative z-10 ${
                   isWajibZakat
-                    ? "bg-[#dcf59f] text-[#064e3b] hover:bg-[#c9e682]"
+                    ? "bg-[#fde047] text-[#4c0519] hover:bg-[#c9e682]"
                     : "bg-white/20 opacity-50 cursor-not-allowed"
                 }`}>
                 <SaveIcon className="w-4 h-4" /> Simpan Catatan
@@ -303,7 +303,7 @@ export default function ZakatClientPage({ goldPrice }: ZakatClientProps) {
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">
                   TOTAL ZAKAT & SEDEKAH
                 </p>
-                <h2 className="text-2xl font-bold text-[#064e3b]">
+                <h2 className="text-2xl font-bold text-[#4c0519]">
                   Rp {formatRp(totalRiwayat)}
                 </h2>
               </div>
@@ -338,7 +338,7 @@ export default function ZakatClientPage({ goldPrice }: ZakatClientProps) {
                       </p>
                     </div>
                   </div>
-                  <span className="text-sm font-bold text-[#064e3b]">
+                  <span className="text-sm font-bold text-[#4c0519]">
                     Rp {formatRp(item.amount)}
                   </span>
                 </div>
