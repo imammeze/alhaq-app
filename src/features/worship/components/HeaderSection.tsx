@@ -29,18 +29,18 @@ export const HeaderSection = ({
       </div>
 
       <div className="flex items-center gap-2 mb-4">
-        <div className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-900 text-white rounded-full text-xs font-medium">
+        <div className="flex items-center gap-1.5 px-3 py-1.5 bg-rose-900 text-white rounded-full text-xs font-medium">
           <MapPinIcon className="w-3 h-3" />
           <span>{city}</span>
         </div>
-        <div className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-xs font-medium">
+        <div className="flex items-center gap-1.5 px-3 py-1.5 bg-rose-50 text-rose-700 rounded-full text-xs font-medium">
           <span>{hijriDate}</span>
         </div>
       </div>
 
       <div className="bg-gray-100 p-1 rounded-xl flex relative">
         <div
-          className={`absolute top-1 bottom-1 w-[calc(50%-4px)] bg-[#064e3b] rounded-lg shadow-sm transition-all duration-300 ease-spring ${
+          className={`absolute top-1 bottom-1 w-[calc(50%-4px)] bg-[#4c0519] rounded-lg shadow-sm transition-all duration-300 ease-spring ${
             activeTab === "guide"
               ? "translate-x-[calc(100%+8px)]"
               : "translate-x-0"

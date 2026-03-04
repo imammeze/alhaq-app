@@ -18,7 +18,7 @@ export const ProgressCard = ({ stats }: ProgressCardProps) => {
           <path
             d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
             fill="none"
-            stroke="#064e3b"
+            stroke="#4c0519"
             strokeWidth="3"
             strokeDasharray={`${stats.percentage}, 100`}
             className="transition-all duration-500 ease-out"

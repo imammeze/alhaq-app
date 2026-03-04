@@ -43,7 +43,6 @@ export const AddTargetModal = ({
   return (
     <div className="fixed inset-0 z-100 flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm p-0 sm:p-4">
       <div className="bg-white w-full max-w-md rounded-t-3xl sm:rounded-3xl p-6 shadow-xl animate-in slide-in-from-bottom-10 duration-300">
-        {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-lg font-bold text-gray-800">Tambah Ibadah</h2>
           <button
@@ -53,9 +52,7 @@ export const AddTargetModal = ({
           </button>
         </div>
 
-        {/* Form Body */}
-        <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-1 custom-scrollbar">
-          {/* Input Nama */}
+        <div className="space-y-4 max-h-[70vh] overflow-y-auto custom-scrollbar">
           <div className="space-y-2">
             <label className="text-xs font-bold text-gray-400 uppercase">
               Nama Ibadah
@@ -65,11 +62,10 @@ export const AddTargetModal = ({
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Contoh: Dzikir Pagi"
-              className="w-full p-4 bg-gray-50 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 transition"
+              className="w-full p-4 bg-gray-50 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-rose-500 transition"
             />
           </div>
 
-          {/* Input Waktu */}
           <div className="space-y-2">
             <label className="text-xs font-bold text-gray-400 uppercase">
               Keterangan Waktu
@@ -79,16 +75,15 @@ export const AddTargetModal = ({
               value={subtitle}
               onChange={(e) => setSubtitle(e.target.value)}
               placeholder="Contoh: Setelah Subuh"
-              className="w-full p-4 bg-gray-50 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500 transition"
+              className="w-full p-4 bg-gray-50 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-rose-500 transition"
             />
           </div>
 
-          {/* Pilih Icon Grid */}
           <div className="space-y-2">
             <label className="text-xs font-bold text-gray-400 uppercase">
               Pilih Ikon
             </label>
-            <div className="grid grid-cols-6 gap-2">
+            <div className="grid grid-cols-6 gap-2 p-2">
               {ICON_OPTIONS.map((iconName) => {
                 const IconComponent = ICON_MAP[iconName];
                 const isSelected = selectedIcon === iconName;
@@ -98,7 +93,7 @@ export const AddTargetModal = ({
                     onClick={() => setSelectedIcon(iconName)}
                     className={`aspect-square flex items-center justify-center rounded-xl transition-all ${
                       isSelected
-                        ? "bg-emerald-800 text-white shadow-lg shadow-emerald-200 scale-105"
+                        ? "bg-rose-800 text-white shadow-lg shadow-rose-200 scale-105"
                         : "bg-gray-50 text-gray-400 hover:bg-gray-100"
                     }`}>
                     <IconComponent className="w-5 h-5" />
@@ -108,12 +103,11 @@ export const AddTargetModal = ({
             </div>
           </div>
 
-          {/* Pilih Warna */}
           <div className="space-y-2">
             <label className="text-xs font-bold text-gray-400 uppercase">
               Pilih Warna
             </label>
-            <div className="flex gap-3 overflow-x-auto py-2">
+            <div className="flex gap-3 overflow-x-auto p-2">
               {COLOR_OPTIONS.map((option, idx) => (
                 <button
                   key={idx}
@@ -142,7 +136,6 @@ export const AddTargetModal = ({
           </div>
         </div>
 
-        {/* Footer Button */}
         <div className="mt-6 pt-4 border-t border-gray-100">
           <button
             onClick={handleSave}

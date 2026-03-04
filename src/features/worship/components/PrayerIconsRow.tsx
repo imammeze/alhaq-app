@@ -68,7 +68,7 @@ export const PrayerIconsRow = ({
         </div>
       ) : (
         <div className="mt-6 animate-in zoom-in duration-300">
-          <p className="text-xs font-bold text-emerald-600 bg-emerald-50 px-4 py-2 rounded-full">
+          <p className="text-xs font-bold text-rose-600 bg-rose-50 px-4 py-2 rounded-full">
             Alhamdulillah, Lengkap! ✨
           </p>
         </div>

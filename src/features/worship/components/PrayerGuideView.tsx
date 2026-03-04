@@ -37,7 +37,7 @@ export const PrayerGuideView = ({
             }}
             className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all ${
               subTab === "niat"
-                ? "bg-[#064e3b] text-white shadow-md"
+                ? "bg-[#4c0519] text-white shadow-md"
                 : "text-gray-500 hover:bg-gray-100"
             }`}>
             Niat Sholat
@@ -49,7 +49,7 @@ export const PrayerGuideView = ({
             }}
             className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all ${
               subTab === "bacaan"
-                ? "bg-[#064e3b] text-white shadow-md"
+                ? "bg-[#4c0519] text-white shadow-md"
                 : "text-gray-500 hover:bg-gray-100"
             }`}>
             Bacaan Sholat
@@ -85,7 +85,7 @@ export const PrayerGuideView = ({
                     <div>
                       <h3
                         className={`text-sm font-bold transition-colors ${
-                          isExpanded ? "text-[#064e3b]" : "text-gray-800"
+                          isExpanded ? "text-[#4c0519]" : "text-gray-800"
                         }`}>
                         {item.name}
                       </h3>
@@ -98,7 +98,7 @@ export const PrayerGuideView = ({
                   </div>
                   <ChevronDownIcon
                     className={`w-5 h-5 text-gray-300 transition-transform duration-300 ${
-                      isExpanded ? "rotate-180 text-[#064e3b]" : ""
+                      isExpanded ? "rotate-180 text-[#4c0519]" : ""
                     }`}
                   />
                 </button>
@@ -115,7 +115,7 @@ export const PrayerGuideView = ({
 
                       {/* Latin & Arti */}
                       <div className="space-y-2 border-t border-gray-200 pt-3">
-                        <p className="text-sm font-medium text-[#064e3b] italic">
+                        <p className="text-sm font-medium text-[#4c0519] italic">
                           "{item.latin}"
                         </p>
                         <p className="text-xs text-gray-500 leading-relaxed">
