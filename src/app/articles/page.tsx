@@ -31,7 +31,7 @@ export default function ArticlesPage() {
             onClick={() => setActiveTab(tab)}
             className={`px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
               activeTab === tab
-                ? "bg-[#064e3b] text-white shadow-lg shadow-emerald-900/20"
+                ? "bg-[#4c0519] text-white shadow-lg shadow-rose-900/20"
                 : "bg-white border border-gray-100 text-gray-500"
             }`}>
             {tab}
@@ -89,7 +89,7 @@ export default function ArticlesPage() {
 function SectionLabel({ icon, title }: { icon: string; title: string }) {
   return (
     <div className="px-5 mt-4 flex items-center gap-2 mb-4">
-      <div className="w-4 h-4 text-emerald-600">{icon}</div>
+      <div className="w-4 h-4 text-rose-600">{icon}</div>
       <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider">
         {title}
       </h3>
@@ -135,7 +135,7 @@ function ArticleItem({ category, date, title, image }: ArticleItemProps) {
       <div className={`w-20 h-20 rounded-xl ${image} shrink-0`} />
       <div className="flex flex-col justify-between py-1 flex-1">
         <div className="flex items-center gap-2 text-[10px] font-bold text-gray-400">
-          <span className="text-emerald-700">{category}</span>
+          <span className="text-rose-700">{category}</span>
           <span>•</span>
           <span>{date}</span>
         </div>
@@ -144,7 +144,7 @@ function ArticleItem({ category, date, title, image }: ArticleItemProps) {
           {title}
         </h3>
 
-        <button className="text-[10px] font-bold text-gray-400 flex items-center gap-1 hover:text-emerald-600 transition-colors w-fit">
+        <button className="text-[10px] font-bold text-gray-400 flex items-center gap-1 hover:text-rose-600 transition-colors w-fit">
           Baca <span className="text-xs">›</span>
         </button>
       </div>

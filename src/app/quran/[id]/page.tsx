@@ -35,12 +35,12 @@ export default async function SurahDetailPage({ params }: PageProps) {
       </header>
 
       <div className="px-5 mt-6">
-        <div className="bg-[#064e3b] rounded-3xl p-6 text-white text-center relative overflow-hidden shadow-lg shadow-emerald-900/20">
+        <div className="bg-[#4c0519] rounded-3xl p-6 text-white text-center relative overflow-hidden shadow-lg shadow-rose-900/20">
           <div className="relative z-10">
             <h2 className="text-3xl font-bold mb-2 font-serif">{surah.nama}</h2>
             <h3 className="text-lg font-medium mb-4">{surah.namaLatin}</h3>
             <div className="w-full h-px bg-white/20 mb-4 mx-auto max-w-[200px]" />
-            <p className="text-xs text-emerald-100 uppercase tracking-widest mb-6">
+            <p className="text-xs text-rose-100 uppercase tracking-widest mb-6">
               {surah.tempatTurun} • {surah.jumlahAyat} Ayat
             </p>
 
@@ -58,7 +58,7 @@ export default async function SurahDetailPage({ params }: PageProps) {
       <div className="px-5 mt-4 mb-2">
         <div className="bg-white p-3 rounded-xl border border-gray-100 flex items-center justify-between shadow-sm">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600">
+            <div className="w-10 h-10 rounded-full bg-rose-50 flex items-center justify-center text-rose-600">
               <PlayCircleIcon className="w-6 h-6" />
             </div>
             <div>
@@ -89,7 +89,7 @@ export default async function SurahDetailPage({ params }: PageProps) {
         {surah.suratSebelomnya && (
           <Link
             href={`/quran/${surah.suratSebelomnya.nomor}`}
-            className="flex-1 bg-white p-3 rounded-xl border border-gray-200 text-center hover:border-emerald-500 transition">
+            className="flex-1 bg-white p-3 rounded-xl border border-gray-200 text-center hover:border-rose-500 transition">
             <p className="text-[10px] text-gray-400">Sebelumnya</p>
             <p className="text-xs font-bold text-gray-800">
               {surah.suratSebelomnya.namaLatin}
@@ -99,7 +99,7 @@ export default async function SurahDetailPage({ params }: PageProps) {
         {surah.suratSelanjutnya && (
           <Link
             href={`/quran/${surah.suratSelanjutnya.nomor}`}
-            className="flex-1 bg-white p-3 rounded-xl border border-gray-200 text-center hover:border-emerald-500 transition">
+            className="flex-1 bg-white p-3 rounded-xl border border-gray-200 text-center hover:border-rose-500 transition">
             <p className="text-[10px] text-gray-400">Selanjutnya</p>
             <p className="text-xs font-bold text-gray-800">
               {surah.suratSelanjutnya.namaLatin}

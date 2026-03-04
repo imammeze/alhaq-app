@@ -19,7 +19,7 @@ export default async function DoaDetailPage({ params }: PageProps) {
         <p className="text-gray-500 mb-4">Gagal memuat detail doa.</p>
         <Link
           href="/doa"
-          className="flex items-center gap-2 px-4 py-2 bg-[#064e3b] text-white rounded-lg font-medium transition active:scale-95">
+          className="flex items-center gap-2 px-4 py-2 bg-[#4c0519] text-white rounded-lg font-medium transition active:scale-95">
           <ArrowLeftIcon className="w-4 h-4" /> Kembali ke Daftar
         </Link>
       </div>

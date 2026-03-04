@@ -63,11 +63,11 @@ export default async function JuzDetailPage({ params }: PageProps) {
             <div key={ayat.number}>
               {isFirstAyah && (
                 <div className="mb-6 mt-10 animate-in fade-in slide-in-from-bottom-2">
-                  <div className="bg-[#064e3b] rounded-2xl p-4 text-white text-center relative overflow-hidden shadow-md">
+                  <div className="bg-[#4c0519] rounded-2xl p-4 text-white text-center relative overflow-hidden shadow-md">
                     <h2 className="text-xl font-bold font-serif relative z-10">
                       {ayat.surah.name}
                     </h2>
-                    <p className="text-xs text-emerald-100 relative z-10">
+                    <p className="text-xs text-rose-100 relative z-10">
                       {ayat.surah.englishName}
                     </p>
                     <div className="absolute -top-10 -left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
@@ -85,7 +85,7 @@ export default async function JuzDetailPage({ params }: PageProps) {
                 id={`juz-${id}-ayat-${ayat.number}`}>
                 <div className="flex items-center justify-between mb-4 bg-gray-50/50 p-2 rounded-lg">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold border border-emerald-200">
+                    <div className="w-8 h-8 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center text-xs font-bold border border-rose-200">
                       {ayat.numberInSurah}
                     </div>
                     <span className="text-xs font-bold text-gray-400">
@@ -101,7 +101,7 @@ export default async function JuzDetailPage({ params }: PageProps) {
                 </p>
 
                 <div className="space-y-2">
-                  <p className="text-sm text-gray-600 leading-relaxed border-l-2 border-emerald-500 pl-3">
+                  <p className="text-sm text-gray-600 leading-relaxed border-l-2 border-rose-500 pl-3">
                     {ayat.translation}
                   </p>
                 </div>
@@ -115,7 +115,7 @@ export default async function JuzDetailPage({ params }: PageProps) {
         {parseInt(id) > 1 && (
           <Link
             href={`/quran/juz/${parseInt(id) - 1}`}
-            className="flex-1 bg-white p-3 rounded-xl border border-gray-200 text-center hover:border-emerald-500 transition">
+            className="flex-1 bg-white p-3 rounded-xl border border-gray-200 text-center hover:border-rose-500 transition">
             <p className="text-[10px] text-gray-400">Juz Sebelumnya</p>
             <p className="text-xs font-bold text-gray-800">
               Juz {parseInt(id) - 1}
@@ -125,7 +125,7 @@ export default async function JuzDetailPage({ params }: PageProps) {
         {parseInt(id) < 30 && (
           <Link
             href={`/quran/juz/${parseInt(id) + 1}`}
-            className="flex-1 bg-white p-3 rounded-xl border border-gray-200 text-center hover:border-emerald-500 transition">
+            className="flex-1 bg-white p-3 rounded-xl border border-gray-200 text-center hover:border-rose-500 transition">
             <p className="text-[10px] text-gray-400">Juz Selanjutnya</p>
             <p className="text-xs font-bold text-gray-800">
               Juz {parseInt(id) + 1}

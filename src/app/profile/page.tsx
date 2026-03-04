@@ -44,7 +44,7 @@ export default function Page() {
             <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400">
               <UserIcon className="w-8 h-8" />
             </div>
-            <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-[#0e2e25] rounded-lg flex items-center justify-center text-white border-2 border-white">
+            <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-[#2e0e0e] rounded-lg flex items-center justify-center text-white border-2 border-white">
               <CameraIcon className="w-3 h-3" />
             </div>
           </div>
@@ -120,8 +120,8 @@ export default function Page() {
         </button>
 
         <p className="text-[10px] text-gray-400 text-center mt-6">
-          <span className="font-bold text-[#064e3b]">Al Haq</span> — Made with
-          ❤️
+          Masjid Al Haq @2026 | Developed by
+          <span className="font-bold text-[#4c0519]">sobatberbagi.com</span>
         </p>
       </div>
     </div>

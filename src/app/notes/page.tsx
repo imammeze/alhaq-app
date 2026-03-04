@@ -28,7 +28,7 @@ export default function NotesPage() {
             </p>
           </div>
 
-          <button className="w-10 h-10 bg-[#0e2e25] rounded-xl flex items-center justify-center text-white shadow-lg shadow-emerald-900/20 hover:bg-[#064e3b] transition-colors">
+          <button className="w-10 h-10 bg-[#2e0e0e] rounded-xl flex items-center justify-center text-white shadow-lg shadow-rose-900/20 hover:bg-[#4c0519] transition-colors">
             <PlusIcon className="w-6 h-6" />
           </button>
         </div>
@@ -39,7 +39,7 @@ export default function NotesPage() {
             onClick={() => setActiveTab("catatan")}
             className={`flex-1 py-2.5 text-sm font-bold rounded-lg flex items-center justify-center gap-2 transition-all ${
               activeTab === "catatan"
-                ? "bg-white text-[#064e3b] shadow-sm"
+                ? "bg-white text-[#4c0519] shadow-sm"
                 : "text-gray-400 hover:text-gray-600"
             }`}>
             <FileTextIcon className="w-4 h-4" />
@@ -50,7 +50,7 @@ export default function NotesPage() {
             onClick={() => setActiveTab("riwayat")}
             className={`flex-1 py-2.5 text-sm font-bold rounded-lg flex items-center justify-center gap-2 transition-all ${
               activeTab === "riwayat"
-                ? "bg-white text-[#064e3b] shadow-sm"
+                ? "bg-white text-[#4c0519] shadow-sm"
                 : "text-gray-400 hover:text-gray-600"
             }`}>
             <HistoryIcon className="w-4 h-4" />
@@ -65,7 +65,7 @@ export default function NotesPage() {
             <input
               type="text"
               placeholder="Cari catatan..."
-              className="w-full bg-white border border-gray-100 rounded-xl py-3 pl-12 pr-4 text-sm font-medium text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+              className="w-full bg-white border border-gray-100 rounded-xl py-3 pl-12 pr-4 text-sm font-medium text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500/20"
             />
           </div>
 
@@ -85,7 +85,7 @@ export default function NotesPage() {
                 onClick={() => setActiveFilter(filter)}
                 className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all flex items-center gap-2 ${
                   isActive
-                    ? "bg-[#0e2e25] text-white"
+                    ? "bg-[#2e0e0e] text-white"
                     : "bg-white border border-gray-100 text-gray-500 hover:bg-gray-50"
                 }`}>
                 {filter}
@@ -115,7 +115,7 @@ export default function NotesPage() {
           Mulai tulis catatan pertama Anda
         </p>
 
-        <button className="px-6 py-3 bg-[#0e2e25] text-white text-sm font-bold rounded-xl flex items-center gap-2 shadow-lg shadow-emerald-900/20 hover:bg-[#064e3b] transition-colors">
+        <button className="px-6 py-3 bg-[#2e0e0e] text-white text-sm font-bold rounded-xl flex items-center gap-2 shadow-lg shadow-rose-900/20 hover:bg-[#4c0519] transition-colors">
           <PlusIcon className="w-4 h-4" />
           Catatan Baru
         </button>

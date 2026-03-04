@@ -140,7 +140,7 @@ export default function TasbihPage() {
         <button
           onClick={() => setIsSelectorOpen(true)}
           className="bg-white px-4 py-2 rounded-full shadow-sm flex items-center gap-3 mb-12 hover:shadow-md transition-shadow active:scale-95">
-          <div className="w-6 h-6 bg-[#064e3b] rounded-full flex items-center justify-center">
+          <div className="w-6 h-6 bg-[#4c0519] rounded-full flex items-center justify-center">
             <CircleDotIcon className="w-4 h-4 text-white" />
           </div>
           <span className="text-sm font-bold text-gray-800">
@@ -171,7 +171,7 @@ export default function TasbihPage() {
               cy="50"
               r={RADIUS}
               fill="none"
-              stroke="#064e3b"
+              stroke="#4c0519"
               strokeWidth="2"
               strokeDasharray={CIRCUMFERENCE}
               strokeDashoffset={strokeDashoffset}
@@ -183,7 +183,7 @@ export default function TasbihPage() {
             <h1 className="text-8xl font-bold text-slate-900 font-mono tracking-tighter">
               {count}
             </h1>
-            <p className="text-[10px] font-bold text-emerald-600 uppercase tracking-[0.2em] mt-2">
+            <p className="text-[10px] font-bold text-rose-600 uppercase tracking-[0.2em] mt-2">
               Ketuk
             </p>
           </div>
