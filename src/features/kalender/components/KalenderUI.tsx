@@ -20,10 +20,10 @@ export function KalenderHeader() {
         <h1 className="text-lg font-bold text-gray-800">Kalender Hijriyah</h1>
       </div>
       <div className="flex items-center gap-2">
-        <button className="p-2 rounded-full text-gray-400 hover:text-emerald-600 transition">
+        <button className="p-2 rounded-full text-gray-400 hover:text-rose-600 transition">
           <SettingsIcon className="w-5 h-5" />
         </button>
-        <button className="p-2 rounded-full text-gray-400 hover:text-emerald-600 transition">
+        <button className="p-2 rounded-full text-gray-400 hover:text-rose-600 transition">
           <CalendarIcon className="w-5 h-5" />
         </button>
       </div>
@@ -110,7 +110,7 @@ export function TaskRow({
         onClick={onClick}
         className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
           isCompleted
-            ? "bg-emerald-500 border-emerald-500 text-white"
+            ? "bg-rose-500 border-rose-500 text-white"
             : "border-gray-200"
         }`}>
         {isCompleted && <CheckIcon className="w-4 h-4" />}

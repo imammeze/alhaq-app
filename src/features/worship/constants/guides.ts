@@ -26,8 +26,8 @@ export const NIAT_SHOLAT_LIST: GuideItem[] = [
     title: "Sholat Safar (Jamak/Qasar)",
     subtitle: "10 Niat",
     icon: MapPin,
-    color: "text-emerald-600",
-    bg: "bg-emerald-50",
+    color: "text-rose-600",
+    bg: "bg-rose-50",
   },
   {
     id: "2",

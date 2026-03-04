@@ -171,7 +171,7 @@ export default function KalenderClientPage({
                 onClick={() => setSelectedDayInfo(dayData)}
                 className={`w-11 h-12 mx-auto rounded-2xl flex flex-col items-center justify-center gap-0.5 transition-all ${
                   isSelected
-                    ? "bg-[#064e3b] text-white shadow-md scale-105"
+                    ? "bg-[#4c0519] text-white shadow-md scale-105"
                     : "bg-transparent hover:bg-gray-50"
                 }`}>
                 <span
@@ -186,7 +186,7 @@ export default function KalenderClientPage({
                 </span>
                 <span
                   className={`text-[8px] font-bold ${
-                    isSelected ? "text-emerald-200" : "text-gray-400"
+                    isSelected ? "text-rose-200" : "text-gray-400"
                   }`}>
                   {parseInt(dayData.date.hijri.day)}
                 </span>
@@ -218,7 +218,7 @@ export default function KalenderClientPage({
                   {selectedDayInfo.date.hijri.year} H
                 </p>
               </div>
-              <button className="w-8 h-8 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:text-emerald-600 transition">
+              <button className="w-8 h-8 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:text-rose-600 transition">
                 <DownloadIcon className="w-4 h-4" />
               </button>
             </div>

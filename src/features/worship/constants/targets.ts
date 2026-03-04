@@ -38,7 +38,7 @@ export const ICON_MAP: Record<string, any> = {
 export const ICON_OPTIONS = Object.keys(ICON_MAP);
 
 export const COLOR_OPTIONS = [
-  { hex: "#10b981", text: "text-emerald-500", bg: "bg-emerald-50" },
+  { hex: "#4c0519", text: "text-rose-500", bg: "bg-rose-50" },
   { hex: "#6b7280", text: "text-gray-500", bg: "bg-gray-50" },
   { hex: "#a855f7", text: "text-purple-500", bg: "bg-purple-50" },
   { hex: "#f97316", text: "text-orange-500", bg: "bg-orange-50" },
