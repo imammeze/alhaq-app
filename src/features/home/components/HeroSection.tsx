@@ -109,9 +109,9 @@ export default function HeroSection({
   if (loading || !data) {
     return (
       <div className="px-5 mt-2">
-        <div className="bg-[#064e3b] rounded-3xl p-6 h-[220px] animate-pulse flex flex-col justify-center items-center">
-          <div className="h-4 w-32 bg-emerald-800/50 rounded mb-4"></div>
-          <div className="h-10 w-48 bg-emerald-800/50 rounded"></div>
+        <div className="bg-[#4c0519] rounded-3xl p-6 h-[220px] animate-pulse flex flex-col justify-center items-center">
+          <div className="h-4 w-32 bg-rose-800/50 rounded mb-4"></div>
+          <div className="h-10 w-48 bg-rose-800/50 rounded"></div>
         </div>
       </div>
     );
@@ -123,51 +123,51 @@ export default function HeroSection({
 
   return (
     <div className="px-5 mt-2">
-      <div className="bg-[#064e3b] rounded-3xl p-6 text-white shadow-lg relative overflow-hidden">
+      <div className="bg-[#4c0519] rounded-3xl p-6 text-white shadow-lg relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
 
         <div className="flex items-center justify-between mb-6 relative z-10">
           <div className="flex items-center gap-1 bg-white/20 px-2 py-1 rounded-lg backdrop-blur-sm">
-            <MapPinIcon className="w-3 h-3 text-emerald-300" />
+            <MapPinIcon className="w-3 h-3 text-rose-300" />
             <span className="text-xs font-medium truncate max-w-[120px]">
               {city}
             </span>
           </div>
-          <span className="text-xs text-emerald-200/80 font-medium">
+          <span className="text-xs text-rose-200/80 font-medium">
             {data.date.hijri.day} {data.date.hijri.month.en}{" "}
             {data.date.hijri.year}
           </span>
         </div>
 
-        <p className="text-xs text-emerald-200 uppercase tracking-wider mb-1">
+        <p className="text-xs text-rose-200 uppercase tracking-wider mb-1">
           Sholat Berikutnya
         </p>
 
         <div className="relative z-10 flex flex-col">
           <div className="flex justify-between items-end mb-1">
-            <h2 className="text-2xl font-bold text-emerald-50">
+            <h2 className="text-2xl font-bold text-rose-50">
               {nextPrayerInfo?.name || "..."}
             </h2>
           </div>
 
           <h1 className="text-5xl font-bold tracking-tight font-mono tabular-nums mb-4">
             {timeLeft}{" "}
-            <span className="text-sm font-sans text-emerald-200 font-medium tracking-normal">
+            <span className="text-sm font-sans text-rose-200 font-medium tracking-normal">
               lagi
             </span>
           </h1>
 
           {nextPrayerInfo && (
             <div className="w-full mt-2 flex items-center gap-3">
-              <div className="flex-1 h-1.5 bg-emerald-900/40 rounded-full overflow-hidden">
+              <div className="flex-1 h-1.5 bg-rose-900/40 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-emerald-400 rounded-full transition-all duration-1000 ease-linear"
+                  className="h-full bg-rose-400 rounded-full transition-all duration-1000 ease-linear"
                   style={{ width: `${progress}%` }}
                 />
               </div>
 
               <div className="shrink-0">
-                <span className="text-[10px] font-medium text-emerald-100/80 tracking-wide">
+                <span className="text-[10px] font-medium text-rose-100/80 tracking-wide">
                   Pukul{" "}
                   <span className="font-bold text-white text-[11px] ml-0.5">
                     {nextPrayerInfo.time}
@@ -180,7 +180,7 @@ export default function HeroSection({
           <div className="flex items-center gap-3 mt-4">
             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
               <MoonIcon className="w-3 h-3 text-amber-200/90" />
-              <span className="text-[10px] font-bold text-emerald-300 ml-0.5">
+              <span className="text-[10px] font-bold text-rose-300 ml-0.5">
                 Imsak
               </span>
               <span className="text-[11px] font-bold text-white ml-0.5">
@@ -190,7 +190,7 @@ export default function HeroSection({
 
             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
               <SunriseIcon className="w-3 h-3 text-amber-200/90" />
-              <span className="text-[10px] font-bold text-emerald-300 ml-0.5">
+              <span className="text-[10px] font-bold text-rose-300 ml-0.5">
                 Terbit
               </span>
               <span className="text-[11px] font-bold text-white ml-0.5">

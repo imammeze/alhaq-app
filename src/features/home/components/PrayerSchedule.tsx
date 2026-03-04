@@ -55,7 +55,7 @@ export default function PrayerSchedule({ timings }: PrayerScheduleProps) {
         <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider">
           Jadwal Hari Ini
         </h3>
-        <button className="px-3 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-bold rounded-full">
+        <button className="px-3 py-1 bg-rose-50 text-rose-600 text-[10px] font-bold rounded-full">
           Lihat Detail
         </button>
       </div>
@@ -73,16 +73,16 @@ export default function PrayerSchedule({ timings }: PrayerScheduleProps) {
                 <div
                   className={`w-2.5 h-2.5 rounded-full transition-colors duration-300 ${
                     isNext
-                      ? "bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.2)]"
+                      ? "bg-rose-500 shadow-[0_0_0_4px_rgba(16,185,129,0.2)]"
                       : isPast
                       ? "bg-gray-200"
-                      : "bg-emerald-200"
+                      : "bg-rose-200"
                   }`}
                 />
 
                 <span
                   className={`text-sm font-medium transition-colors ${
-                    isNext ? "text-emerald-700 font-bold" : "text-gray-600"
+                    isNext ? "text-rose-700 font-bold" : "text-gray-600"
                   }`}>
                   {prayer.name}
                 </span>
@@ -90,14 +90,14 @@ export default function PrayerSchedule({ timings }: PrayerScheduleProps) {
 
               <div className="flex items-center gap-3">
                 {isNext && (
-                  <span className="px-2 py-0.5 bg-emerald-600 text-white text-[10px] font-bold rounded flex items-center shadow-sm animate-in fade-in zoom-in duration-300">
+                  <span className="px-2 py-0.5 bg-rose-600 text-white text-[10px] font-bold rounded flex items-center shadow-sm animate-in fade-in zoom-in duration-300">
                     Akan Datang
                   </span>
                 )}
 
                 <span
                   className={`text-sm font-mono transition-colors ${
-                    isNext ? "text-emerald-700 font-bold" : "text-gray-600"
+                    isNext ? "text-rose-700 font-bold" : "text-gray-600"
                   }`}>
                   {prayer.time}
                 </span>

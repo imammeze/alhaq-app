@@ -19,7 +19,7 @@ export default function DateCard() {
       className="px-5 mt-4 block active:scale-95 transition-transform">
       <div className="bg-white rounded-2xl p-4 flex items-center justify-between shadow-sm border border-gray-100 cursor-pointer hover:bg-gray-50 transition">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-700 font-bold text-sm">
+          <div className="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center text-rose-700 font-bold text-sm">
             {dateNum}
           </div>
           <div>

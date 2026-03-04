@@ -22,7 +22,7 @@ export default function QuickAccess() {
               key={item.path}
               onClick={() => router.push(item.path)}
               className="flex flex-col items-center gap-2">
-              <div className="w-14 h-14 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-700">
+              <div className="w-14 h-14 rounded-2xl bg-rose-50 flex items-center justify-center text-rose-700">
                 <Icon className="w-6 h-6" />
               </div>
 

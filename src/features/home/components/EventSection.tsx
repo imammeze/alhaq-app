@@ -53,7 +53,7 @@ export default function EventSection() {
             Jangan lewatkan agenda kebaikan
           </p>
         </div>
-        <button className="text-[10px] font-bold text-emerald-600 flex items-center gap-1 hover:text-emerald-700 transition-colors">
+        <button className="text-[10px] font-bold text-rose-600 flex items-center gap-1 hover:text-rose-700 transition-colors">
           Lihat Semua <ArrowRightIcon className="w-3 h-3" />
         </button>
       </div>
@@ -69,23 +69,23 @@ export default function EventSection() {
                 alt={event.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-lg text-[9px] font-bold text-[#064e3b]">
+              <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-lg text-[9px] font-bold text-[#4c0519]">
                 {event.category}
               </div>
             </div>
 
             <div className="p-4">
               <div className="flex items-start gap-3 mb-3">
-                <div className="bg-emerald-50 rounded-xl p-2 text-center min-w-[50px] flex flex-col items-center justify-center border border-emerald-100/50">
-                  <span className="text-lg font-bold text-[#064e3b] leading-none mb-1">
+                <div className="bg-rose-50 rounded-xl p-2 text-center min-w-[50px] flex flex-col items-center justify-center border border-rose-100/50">
+                  <span className="text-lg font-bold text-[#4c0519] leading-none mb-1">
                     {event.date.split(" ")[0]}
                   </span>
-                  <span className="text-[9px] font-bold text-emerald-600 uppercase">
+                  <span className="text-[9px] font-bold text-rose-600 uppercase">
                     {event.date.split(" ")[1]}
                   </span>
                 </div>
 
-                <h3 className="text-sm font-bold text-gray-800 leading-snug line-clamp-2 group-hover:text-emerald-700 transition-colors">
+                <h3 className="text-sm font-bold text-gray-800 leading-snug line-clamp-2 group-hover:text-rose-700 transition-colors">
                   {event.title}
                 </h3>
               </div>
@@ -105,8 +105,8 @@ export default function EventSection() {
         ))}
 
         <div className="flex-none w-[120px] flex items-center justify-center snap-center">
-          <button className="flex flex-col items-center justify-center gap-2 text-emerald-600 hover:text-[#064e3b] transition-colors">
-            <div className="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center">
+          <button className="flex flex-col items-center justify-center gap-2 text-rose-600 hover:text-[#4c0519] transition-colors">
+            <div className="w-12 h-12 rounded-full bg-rose-50 flex items-center justify-center">
               <ArrowRightIcon className="w-5 h-5" />
             </div>
             <span className="text-[10px] font-bold">Lihat Semua</span>
