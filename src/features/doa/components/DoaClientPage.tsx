@@ -92,7 +92,7 @@ export default function DoaClientPage({ doas }: DoaClientPageProps) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Cari doa, kategori, atau terjemahan..."
-            className="w-full bg-white rounded-2xl py-4 pl-12 pr-4 text-sm font-medium text-gray-800 placeholder:text-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 border border-gray-100"
+            className="w-full bg-white rounded-2xl py-4 pl-12 pr-4 text-sm font-medium text-gray-800 placeholder:text-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-rose-600 border border-gray-100"
           />
         </div>
       </div>
@@ -113,8 +113,8 @@ export default function DoaClientPage({ doas }: DoaClientPageProps) {
                   <Link
                     href={`/doa/${doa.id}`}
                     key={doa.id}
-                    className="block bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:border-emerald-500 transition-colors active:scale-[0.99]">
-                    <div className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md inline-block mb-3">
+                    className="block bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:border-rose-500 transition-colors active:scale-[0.99]">
+                    <div className="text-[10px] font-bold text-rose-600 bg-rose-50 px-2 py-1 rounded-md inline-block mb-3">
                       {doa.grup}
                     </div>
                     <h4 className="font-bold text-gray-800 text-sm mb-4">
@@ -125,7 +125,7 @@ export default function DoaClientPage({ doas }: DoaClientPageProps) {
                       dir="rtl">
                       {doa.ar}
                     </p>
-                    <p className="text-xs text-emerald-700 italic mb-2 leading-relaxed">
+                    <p className="text-xs text-rose-700 italic mb-2 leading-relaxed">
                       "{doa.tr}"
                     </p>
                     <p className="text-sm text-gray-600 leading-relaxed border-l-2 border-gray-200 pl-3">

@@ -36,7 +36,7 @@ export function MenuItem({
   color,
 }: MenuItemProps) {
   return (
-    <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between cursor-pointer hover:border-emerald-500 transition-colors">
+    <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between cursor-pointer hover:border-rose-500 transition-colors">
       <div className="flex items-center gap-4">
         <div
           className={`w-10 h-10 rounded-xl ${color} flex items-center justify-center`}>
@@ -68,7 +68,7 @@ export function CollectionItem({
   return (
     <div
       onClick={onClick}
-      className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between cursor-pointer hover:border-emerald-500 transition-colors active:scale-[0.99]">
+      className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between cursor-pointer hover:border-rose-500 transition-colors active:scale-[0.99]">
       <div className="flex items-center gap-4">
         <div className="w-10 h-10 rounded-xl bg-gray-50 text-gray-500 flex items-center justify-center">
           <Icon className="w-5 h-5" />

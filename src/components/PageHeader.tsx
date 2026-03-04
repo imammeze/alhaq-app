@@ -34,8 +34,7 @@ export function PageHeader({
   };
 
   return (
-    <header
-      className={`sticky top-0 z-9999 bg-white/95 backdrop-blur-sm border-b border-gray-100 ${className}`}>
+    <header className={`bg-white border-b border-gray-100 ${className}`}>
       <div className="flex items-center justify-between px-5 py-4">
         {/* LEFT SECTION */}
         <div className="flex items-center gap-3 min-w-0">

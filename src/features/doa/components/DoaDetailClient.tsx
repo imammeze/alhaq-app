@@ -56,12 +56,12 @@ export default function DoaDetailClient({ doa }: DoaDetailClientProps) {
       </header>
 
       <div className="px-5 mt-6 space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-300">
-        <div className="bg-[#064e3b] rounded-3xl p-6 text-white relative overflow-hidden shadow-lg shadow-emerald-900/20">
+        <div className="bg-[#4c0519] rounded-3xl p-6 text-white relative overflow-hidden shadow-lg shadow-rose-900/20">
           <div className="relative z-10 flex flex-col items-center text-center">
             <span className="px-3 py-1 bg-white/20 rounded-full text-[10px] font-bold tracking-widest uppercase mb-3 backdrop-blur-sm">
               Doa No. {doa.id}
             </span>
-            <h2 className="text-xl font-bold mb-2 text-emerald-50 leading-snug">
+            <h2 className="text-xl font-bold mb-2 text-rose-50 leading-snug">
               {doa.nama}
             </h2>
           </div>
@@ -73,13 +73,13 @@ export default function DoaDetailClient({ doa }: DoaDetailClientProps) {
           <div className="flex justify-end gap-2 mb-6 pb-4 border-b border-gray-50">
             <button
               onClick={handleCopy}
-              className="p-2 text-gray-400 hover:text-emerald-600 hover:bg-emerald-50 rounded-xl transition"
+              className="p-2 text-gray-400 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition"
               title="Salin Teks">
               <CopyIcon className="w-5 h-5" />
             </button>
             <button
               onClick={handleShare}
-              className="p-2 text-gray-400 hover:text-emerald-600 hover:bg-emerald-50 rounded-xl transition"
+              className="p-2 text-gray-400 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition"
               title="Bagikan">
               <Share2Icon className="w-5 h-5" />
             </button>
@@ -87,12 +87,12 @@ export default function DoaDetailClient({ doa }: DoaDetailClientProps) {
               onClick={() => setIsBookmarked(!isBookmarked)}
               className={`p-2 rounded-xl transition ${
                 isBookmarked
-                  ? "text-emerald-600 bg-emerald-50"
-                  : "text-gray-400 hover:text-emerald-600 hover:bg-emerald-50"
+                  ? "text-rose-600 bg-rose-50"
+                  : "text-gray-400 hover:text-rose-600 hover:bg-rose-50"
               }`}
               title="Simpan Doa">
               <BookmarkIcon
-                className={`w-5 h-5 ${isBookmarked ? "fill-emerald-600" : ""}`}
+                className={`w-5 h-5 ${isBookmarked ? "fill-rose-600" : ""}`}
               />
             </button>
           </div>
@@ -108,7 +108,7 @@ export default function DoaDetailClient({ doa }: DoaDetailClientProps) {
               <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">
                 Cara Membaca
               </p>
-              <p className="text-sm text-emerald-700 font-medium italic leading-relaxed">
+              <p className="text-sm text-rose-700 font-medium italic leading-relaxed">
                 {doa.tr}
               </p>
             </div>
@@ -117,7 +117,7 @@ export default function DoaDetailClient({ doa }: DoaDetailClientProps) {
               <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">
                 Terjemahan
               </p>
-              <p className="text-sm text-gray-600 leading-relaxed border-l-2 border-emerald-500 pl-3">
+              <p className="text-sm text-gray-600 leading-relaxed border-l-2 border-rose-500 pl-3">
                 {doa.idn}
               </p>
             </div>
