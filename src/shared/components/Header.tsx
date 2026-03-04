@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header className="px-5 pt-6 pb-4 flex items-center justify-between bg-white">
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-lg">
+        <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-700 font-bold text-lg">
           H
         </div>
         <div>

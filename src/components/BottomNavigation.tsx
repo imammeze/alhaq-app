@@ -45,11 +45,11 @@ export default function BottomNavigation() {
               data-nav-id={item.id}
               onClick={() => router.push(item.path)}
               className={`flex-none w-[20%] sm:w-[14.28%] snap-center py-3 flex flex-col items-center justify-center gap-1 relative group ${
-                isActive ? "text-[#064e3b]" : "text-gray-400"
+                isActive ? "text-[#4c0519]" : "text-gray-400"
               }`}>
               <div
                 className={`p-1.5 rounded-xl transition-all duration-200 ${
-                  isActive ? "bg-[#064e3b] text-white" : "bg-transparent"
+                  isActive ? "bg-[#4c0519] text-white" : "bg-transparent"
                 }`}>
                 <Icon className="w-5 h-5" strokeWidth={isActive ? 2 : 1.5} />
               </div>
