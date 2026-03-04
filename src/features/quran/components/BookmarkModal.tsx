@@ -30,7 +30,7 @@ export const BookmarkModal = ({ isOpen, onClose }: BookmarkModalProps) => {
             onClick={() => setActiveTab("riwayat")}
             className={`flex-1 py-4 text-xs font-bold uppercase tracking-wider transition-colors ${
               activeTab === "riwayat"
-                ? "text-[#064e3b] border-b-2 border-[#064e3b]"
+                ? "text-[#4c0519] border-b-2 border-[#4c0519]"
                 : "text-gray-400 hover:text-gray-600"
             }`}>
             Riwayat
@@ -39,7 +39,7 @@ export const BookmarkModal = ({ isOpen, onClose }: BookmarkModalProps) => {
             onClick={() => setActiveTab("bookmark")}
             className={`flex-1 py-4 text-xs font-bold uppercase tracking-wider transition-colors ${
               activeTab === "bookmark"
-                ? "text-[#064e3b] border-b-2 border-[#064e3b]"
+                ? "text-[#4c0519] border-b-2 border-[#4c0519]"
                 : "text-gray-400 hover:text-gray-600"
             }`}>
             Bookmark
@@ -61,9 +61,9 @@ export const BookmarkModal = ({ isOpen, onClose }: BookmarkModalProps) => {
                 {lastRead ? (
                   <Link
                     href={`/quran/${lastRead.surahId}#ayat-${lastRead.ayatNumber}`}
-                    className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between group hover:border-emerald-500 transition">
+                    className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between group hover:border-rose-500 transition">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-700">
+                      <div className="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center text-rose-700">
                         <BookMarkedIcon className="w-5 h-5" />
                       </div>
                       <div>
@@ -92,7 +92,7 @@ export const BookmarkModal = ({ isOpen, onClose }: BookmarkModalProps) => {
                   <Link
                     href={`/quran/${item.surahId}#ayat-${item.ayatNumber}`}
                     key={idx}
-                    className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between mb-2 hover:border-emerald-500 transition">
+                    className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between mb-2 hover:border-rose-500 transition">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500">
                         <HistoryIcon className="w-4 h-4" />
@@ -127,7 +127,7 @@ export const BookmarkModal = ({ isOpen, onClose }: BookmarkModalProps) => {
                   <Link
                     href={`/quran/${item.surahId}#ayat-${item.ayatNumber}`}
                     className="flex items-center gap-4 flex-1">
-                    <div className="w-8 h-8 rounded-lg bg-gray-50 text-emerald-600 font-bold flex items-center justify-center text-xs">
+                    <div className="w-8 h-8 rounded-lg bg-gray-50 text-rose-600 font-bold flex items-center justify-center text-xs">
                       {item.surahId}
                     </div>
                     <div>

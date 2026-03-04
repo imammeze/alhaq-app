@@ -144,23 +144,23 @@ export default function AyatItem({ ayat, surahName, surahId }: AyatItemProps) {
       <div
         className={`bg-white p-5 rounded-2xl border transition-colors duration-300 scroll-mt-32 mb-4 ${
           isMenuOpen
-            ? "border-emerald-500 ring-1 ring-emerald-500"
+            ? "border-rose-500 ring-1 ring-rose-500"
             : "border-gray-100 shadow-sm"
         }`}
         id={`ayat-${ayat.nomorAyat}`}>
         <div className="flex items-center justify-between mb-6 bg-gray-50/50 p-2 rounded-lg">
-          <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold border border-emerald-200 shadow-sm">
+          <div className="w-8 h-8 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center text-xs font-bold border border-rose-200 shadow-sm">
             {ayat.nomorAyat}
           </div>
 
           <div className="flex gap-1">
             {isBookmarked && (
-              <BookmarkIcon className="w-4 h-4 text-emerald-600 fill-emerald-600 mr-2" />
+              <BookmarkIcon className="w-4 h-4 text-rose-600 fill-rose-600 mr-2" />
             )}
 
             <button
               onClick={() => setIsMenuOpen(true)}
-              className="p-1.5 text-gray-400 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition active:scale-95">
+              className="p-1.5 text-gray-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition active:scale-95">
               <MoreHorizontalIcon className="w-5 h-5" />
             </button>
           </div>
@@ -173,7 +173,7 @@ export default function AyatItem({ ayat, surahName, surahId }: AyatItemProps) {
         </p>
 
         <div className="space-y-2">
-          <p className="text-sm text-emerald-700 font-medium italic">
+          <p className="text-sm text-rose-700 font-medium italic">
             "{ayat.teksLatin}"
           </p>
           <p className="text-sm text-gray-600 leading-relaxed border-l-2 border-gray-200 pl-3">
@@ -213,8 +213,8 @@ export default function AyatItem({ ayat, surahName, surahId }: AyatItemProps) {
                 <div
                   className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all ${
                     isPlaying
-                      ? "bg-emerald-100 text-emerald-600 animate-pulse"
-                      : "bg-gray-50 text-gray-600 group-hover:bg-emerald-50 group-hover:text-emerald-600"
+                      ? "bg-rose-100 text-rose-600 animate-pulse"
+                      : "bg-gray-50 text-gray-600 group-hover:bg-rose-50 group-hover:text-rose-600"
                   }`}>
                   {isPlaying ? (
                     <PauseIcon className="w-5 h-5" />
@@ -230,7 +230,7 @@ export default function AyatItem({ ayat, surahName, surahId }: AyatItemProps) {
               <button
                 onClick={handleCopy}
                 className="flex flex-col items-center gap-2 group">
-                <div className="w-12 h-12 rounded-2xl bg-gray-50 text-gray-600 flex items-center justify-center group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-all">
+                <div className="w-12 h-12 rounded-2xl bg-gray-50 text-gray-600 flex items-center justify-center group-hover:bg-rose-50 group-hover:text-rose-600 transition-all">
                   <CopyIcon className="w-5 h-5" />
                 </div>
                 <span className="text-[10px] font-medium text-gray-500 text-center">
@@ -244,8 +244,8 @@ export default function AyatItem({ ayat, surahName, surahId }: AyatItemProps) {
                 <div
                   className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all ${
                     isBookmarked
-                      ? "bg-emerald-600 text-white shadow-lg shadow-emerald-200"
-                      : "bg-gray-50 text-gray-600 group-hover:bg-emerald-50 group-hover:text-emerald-600"
+                      ? "bg-rose-600 text-white shadow-lg shadow-rose-200"
+                      : "bg-gray-50 text-gray-600 group-hover:bg-rose-50 group-hover:text-rose-600"
                   }`}>
                   <BookmarkIcon
                     className={`w-5 h-5 ${isBookmarked ? "fill-white" : ""}`}
@@ -259,7 +259,7 @@ export default function AyatItem({ ayat, surahName, surahId }: AyatItemProps) {
               <button
                 onClick={handleLastRead}
                 className="flex flex-col items-center gap-2 group">
-                <div className="w-12 h-12 rounded-2xl bg-gray-50 text-gray-600 flex items-center justify-center group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-all">
+                <div className="w-12 h-12 rounded-2xl bg-gray-50 text-gray-600 flex items-center justify-center group-hover:bg-rose-50 group-hover:text-rose-600 transition-all">
                   <FlagIcon className="w-5 h-5" />
                 </div>
                 <span className="text-[10px] font-medium text-gray-500 text-center">
@@ -270,7 +270,7 @@ export default function AyatItem({ ayat, surahName, surahId }: AyatItemProps) {
               <button
                 onClick={handleShare}
                 className="flex flex-col items-center gap-2 group">
-                <div className="w-12 h-12 rounded-2xl bg-gray-50 text-gray-600 flex items-center justify-center group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-all">
+                <div className="w-12 h-12 rounded-2xl bg-gray-50 text-gray-600 flex items-center justify-center group-hover:bg-rose-50 group-hover:text-rose-600 transition-all">
                   <Share2Icon className="w-5 h-5" />
                 </div>
                 <span className="text-[10px] font-medium text-gray-500 text-center">

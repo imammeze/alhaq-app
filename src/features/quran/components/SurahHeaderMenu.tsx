@@ -38,8 +38,8 @@ export default function SurahHeaderMenu({ totalAyat }: SurahHeaderMenuProps) {
 
       setTimeout(() => {
         element.scrollIntoView({ behavior: "smooth", block: "center" });
-        element.classList.add("bg-emerald-50");
-        setTimeout(() => element.classList.remove("bg-emerald-50"), 2000);
+        element.classList.add("bg-rose-50");
+        setTimeout(() => element.classList.remove("bg-rose-50"), 2000);
       }, 300);
     } else {
       alert("Ayat belum termuat.");
@@ -144,7 +144,7 @@ export default function SurahHeaderMenu({ totalAyat }: SurahHeaderMenuProps) {
                     <button
                       key={num}
                       onClick={() => handleScrollToAyat(num)}
-                      className="aspect-square flex items-center justify-center rounded-xl bg-gray-50 text-gray-600 font-bold text-sm hover:bg-emerald-500 hover:text-white transition-all active:scale-95 border border-gray-100">
+                      className="aspect-square flex items-center justify-center rounded-xl bg-gray-50 text-gray-600 font-bold text-sm hover:bg-rose-500 hover:text-white transition-all active:scale-95 border border-gray-100">
                       {num}
                     </button>
                   )

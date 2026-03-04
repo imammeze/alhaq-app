@@ -43,21 +43,21 @@ export default function QuranClientPage({ surahs }: QuranClientPageProps) {
           <div className="flex items-center gap-2">
             <button
               onClick={handleLastReadClick}
-              className="p-2 text-gray-400 hover:text-emerald-600 hover:bg-emerald-50 bg-gray-50 rounded-lg transition active:scale-95"
+              className="p-2 text-gray-400 hover:text-rose-600 hover:bg-rose-50 bg-gray-50 rounded-lg transition active:scale-95"
               title="Terakhir Dibaca">
               <HistoryIcon className="w-5 h-5" />
             </button>
 
             <button
               onClick={() => setIsBookmarkOpen(true)}
-              className="p-2 text-gray-400 hover:text-emerald-600 hover:bg-emerald-50 bg-gray-50 rounded-lg transition active:scale-95"
+              className="p-2 text-gray-400 hover:text-rose-600 hover:bg-rose-50 bg-gray-50 rounded-lg transition active:scale-95"
               title="Bookmark & Riwayat">
               <BookmarkIcon className="w-5 h-5" />
             </button>
 
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="p-2 text-gray-400 hover:text-emerald-600 hover:bg-emerald-50 bg-gray-50 rounded-lg transition active:scale-95">
+              className="p-2 text-gray-400 hover:text-rose-600 hover:bg-rose-50 bg-gray-50 rounded-lg transition active:scale-95">
               <SearchIcon className="w-5 h-5" />
             </button>
           </div>
@@ -75,7 +75,7 @@ export default function QuranClientPage({ surahs }: QuranClientPageProps) {
             onClick={() => setActiveTab("surah")}
             className={`flex-1 py-2 text-sm font-bold rounded-lg relative z-10 transition-colors ${
               activeTab === "surah"
-                ? "text-emerald-700"
+                ? "text-rose-700"
                 : "text-gray-400 hover:text-gray-600"
             }`}>
             Surah
@@ -84,7 +84,7 @@ export default function QuranClientPage({ surahs }: QuranClientPageProps) {
             onClick={() => setActiveTab("juz")}
             className={`flex-1 py-2 text-sm font-bold rounded-lg relative z-10 transition-colors ${
               activeTab === "juz"
-                ? "text-emerald-700"
+                ? "text-rose-700"
                 : "text-gray-400 hover:text-gray-600"
             }`}>
             Juz
@@ -99,9 +99,9 @@ export default function QuranClientPage({ surahs }: QuranClientPageProps) {
               <Link
                 href={`/quran/${surah.nomor}`}
                 key={surah.nomor}
-                className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:border-emerald-500 transition-all active:scale-[0.99]">
-                <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center text-sm font-bold text-emerald-700 relative">
-                  <div className="absolute inset-0 border-2 border-emerald-100 rounded-xl rotate-45 scale-75"></div>
+                className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:border-rose-500 transition-all active:scale-[0.99]">
+                <div className="w-10 h-10 bg-rose-50 rounded-xl flex items-center justify-center text-sm font-bold text-rose-700 relative">
+                  <div className="absolute inset-0 border-2 border-rose-100 rounded-xl rotate-45 scale-75"></div>
                   <span className="relative z-10">{surah.nomor}</span>
                 </div>
                 <div className="flex-1">
@@ -129,7 +129,7 @@ export default function QuranClientPage({ surahs }: QuranClientPageProps) {
               <Link
                 href={`/quran/juz/${juz}`}
                 key={juz}
-                className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center aspect-square hover:border-emerald-500 transition cursor-pointer active:scale-95">
+                className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center aspect-square hover:border-rose-500 transition cursor-pointer active:scale-95">
                 <h3 className="font-bold text-gray-800 text-sm">Juz {juz}</h3>
                 <p className="text-[10px] text-gray-400 mt-1">
                   Hal {1 + (juz - 1) * 20}

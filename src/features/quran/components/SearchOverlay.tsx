@@ -19,7 +19,6 @@ export const SearchOverlay = ({
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Auto focus saat dibuka
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => inputRef.current?.focus(), 100);
@@ -28,7 +27,6 @@ export const SearchOverlay = ({
 
   if (!isOpen) return null;
 
-  // Logic Filter
   const filteredSurahs = surahs.filter(
     (surah) =>
       surah.namaLatin.toLowerCase().includes(query.toLowerCase()) ||
@@ -38,7 +36,6 @@ export const SearchOverlay = ({
 
   return (
     <div className="fixed inset-0 bg-white z-50 flex flex-col animate-in fade-in duration-200">
-      {/* Search Header */}
       <div className="px-4 py-4 border-b border-gray-100 flex items-center gap-3">
         <button
           onClick={onClose}
@@ -55,12 +52,11 @@ export const SearchOverlay = ({
             className="bg-transparent w-full text-sm outline-none text-gray-800 placeholder:text-gray-400"
           />
         </div>
-        <div className="p-2 bg-[#064e3b] rounded-xl text-white">
+        <div className="p-2 bg-[#4c0519] rounded-xl text-white">
           <SearchIcon className="w-5 h-5" />
         </div>
       </div>
 
-      {/* Results */}
       <div className="flex-1 overflow-y-auto p-4 space-y-2">
         {query && filteredSurahs.length === 0 ? (
           <div className="text-center text-gray-400 mt-10 text-sm">
@@ -71,7 +67,7 @@ export const SearchOverlay = ({
             <Link
               href={`/quran/${surah.nomor}`}
               key={surah.nomor}
-              onClick={onClose} // Tutup search saat diklik
+              onClick={onClose}
               className="flex items-center justify-between p-4 hover:bg-gray-50 rounded-xl transition border-b border-gray-50 last:border-0">
               <div className="flex items-center gap-4">
                 <div className="text-sm font-bold text-gray-400 w-6">
@@ -82,7 +78,7 @@ export const SearchOverlay = ({
                   <p className="text-xs text-gray-400">{surah.arti}</p>
                 </div>
               </div>
-              <span className="font-serif text-lg text-emerald-700">
+              <span className="font-serif text-lg text-rose-700">
                 {surah.nama}
               </span>
             </Link>
