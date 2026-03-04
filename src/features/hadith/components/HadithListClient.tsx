@@ -73,14 +73,11 @@ export default function HadithListClient({ data }: HadithListClientProps) {
         el.scrollIntoView({ behavior: "smooth", block: "center" });
         el.classList.add(
           "ring-2",
-          "ring-emerald-500",
+          "ring-rose-500",
           "transition-all",
           "duration-500"
         );
-        setTimeout(
-          () => el.classList.remove("ring-2", "ring-emerald-500"),
-          2000
-        );
+        setTimeout(() => el.classList.remove("ring-2", "ring-rose-500"), 2000);
       }
     } else {
       if (isLoading) return;
@@ -136,19 +133,19 @@ export default function HadithListClient({ data }: HadithListClientProps) {
 
           <button
             onClick={() => setShowJumpModal(true)}
-            className="p-2 -mr-2 text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-full transition-colors">
+            className="p-2 -mr-2 text-gray-600 hover:text-rose-600 hover:bg-rose-50 rounded-full transition-colors">
             <SearchIcon className="w-5 h-5" />
           </button>
         </header>
 
         <div className="px-5 mt-6 mb-6">
-          <div className="bg-[#064e3b] rounded-3xl p-6 text-white text-center relative overflow-hidden shadow-lg shadow-emerald-900/20">
+          <div className="bg-[#4c0519] rounded-3xl p-6 text-white text-center relative overflow-hidden shadow-lg shadow-rose-900/20">
             <div className="relative z-10">
-              <h2 className="text-2xl font-bold mb-2 font-serif text-emerald-50">
+              <h2 className="text-2xl font-bold mb-2 font-serif text-rose-50">
                 {data.name}
               </h2>
               <div className="w-full h-px bg-white/20 mb-3 mx-auto max-w-[150px]" />
-              <p className="text-xs text-emerald-100 uppercase tracking-widest">
+              <p className="text-xs text-rose-100 uppercase tracking-widest">
                 Kumpulan Hadits Shahih
               </p>
             </div>
@@ -213,13 +210,13 @@ export default function HadithListClient({ data }: HadithListClientProps) {
                   value={jumpNumber}
                   onChange={(e) => setJumpNumber(e.target.value)}
                   placeholder="Contoh: 500"
-                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-emerald-500 text-sm font-bold text-gray-800"
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-rose-500 text-sm font-bold text-gray-800"
                   autoFocus
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#064e3b] text-white font-bold py-3 rounded-xl hover:bg-emerald-900 transition active:scale-95 flex items-center justify-center gap-2">
+                className="w-full bg-[#4c0519] text-white font-bold py-3 rounded-xl hover:bg-rose-900 transition active:scale-95 flex items-center justify-center gap-2">
                 Lompat Sekarang
               </button>
             </form>

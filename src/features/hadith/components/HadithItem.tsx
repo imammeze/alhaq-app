@@ -27,7 +27,7 @@ export default function HadithItem({ hadith, bookName }: HadithItemProps) {
       className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm scroll-mt-24">
       <div className="flex items-center justify-between mb-6 bg-gray-50/50 p-2 rounded-lg">
         <div className="flex items-center gap-3">
-          <div className="px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-700 text-xs font-bold border border-emerald-200 shadow-sm">
+          <div className="px-3 py-1.5 rounded-lg bg-rose-100 text-rose-700 text-xs font-bold border border-rose-200 shadow-sm">
             No. {hadith.number}
           </div>
         </div>
@@ -35,10 +35,10 @@ export default function HadithItem({ hadith, bookName }: HadithItemProps) {
         <div className="flex gap-1">
           <button
             onClick={handleShare}
-            className="p-1.5 text-gray-400 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition">
+            className="p-1.5 text-gray-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition">
             <Share2Icon className="w-4 h-4" />
           </button>
-          <button className="p-1.5 text-gray-400 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition">
+          <button className="p-1.5 text-gray-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition">
             <BookmarkIcon className="w-4 h-4" />
           </button>
         </div>
@@ -51,7 +51,7 @@ export default function HadithItem({ hadith, bookName }: HadithItemProps) {
       </p>
 
       <div className="space-y-2 border-t border-gray-100 pt-4">
-        <p className="text-sm text-gray-600 leading-relaxed border-l-2 border-emerald-500 pl-3">
+        <p className="text-sm text-gray-600 leading-relaxed border-l-2 border-rose-500 pl-3">
           {hadith.id}
         </p>
       </div>

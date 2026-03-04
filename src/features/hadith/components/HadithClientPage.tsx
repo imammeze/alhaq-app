@@ -81,7 +81,7 @@ export default function HadithClientPage({ books }: HadithClientPageProps) {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Cari kitab hadits..."
-            className="w-full bg-gray-50 border-none rounded-xl py-3 pl-10 pr-4 text-sm font-medium text-gray-800 placeholder:text-gray-400 focus:ring-2 focus:ring-emerald-500/20 outline-none"
+            className="w-full bg-gray-50 border-none rounded-xl py-3 pl-10 pr-4 text-sm font-medium text-gray-800 placeholder:text-gray-400 focus:ring-2 focus:ring-rose-500/20 outline-none"
           />
         </div>
       </header>
@@ -98,7 +98,7 @@ export default function HadithClientPage({ books }: HadithClientPageProps) {
                 {topics.map((topic) => (
                   <button
                     key={topic}
-                    className="px-3 py-1.5 bg-gray-100 rounded-lg text-[10px] font-bold text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 transition-colors active:scale-95">
+                    className="px-3 py-1.5 bg-gray-100 rounded-lg text-[10px] font-bold text-gray-600 hover:bg-rose-50 hover:text-rose-700 transition-colors active:scale-95">
                     {topic}
                   </button>
                 ))}
@@ -116,13 +116,13 @@ export default function HadithClientPage({ books }: HadithClientPageProps) {
                 <Link
                   href={`/hadith/${item.id}`}
                   key={item.id}
-                  className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:border-emerald-500 transition-colors active:scale-[0.99] group">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold bg-gray-50 text-gray-600 group-hover:bg-[#064e3b] group-hover:text-white transition-colors">
+                  className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:border-rose-500 transition-colors active:scale-[0.99] group">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold bg-gray-50 text-gray-600 group-hover:bg-[#4c0519] group-hover:text-white transition-colors">
                     H
                   </div>
 
                   <div className="flex-1">
-                    <h3 className="font-bold text-gray-800 group-hover:text-[#064e3b] transition-colors">
+                    <h3 className="font-bold text-gray-800 group-hover:text-[#4c0519] transition-colors">
                       {item.name}
                     </h3>
                     <p className="text-xs text-gray-400 mt-0.5">
@@ -130,7 +130,7 @@ export default function HadithClientPage({ books }: HadithClientPageProps) {
                     </p>
                   </div>
 
-                  <ChevronRightIcon className="w-5 h-5 text-gray-300 group-hover:text-[#064e3b] transition-colors" />
+                  <ChevronRightIcon className="w-5 h-5 text-gray-300 group-hover:text-[#4c0519] transition-colors" />
                 </Link>
               ))
             )}
