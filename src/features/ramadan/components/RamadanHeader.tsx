@@ -11,10 +11,10 @@ export function RamadanHeader() {
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <button className="p-2 rounded-full bg-white shadow-sm text-gray-400 hover:text-emerald-500 transition">
+          <button className="p-2 rounded-full bg-white shadow-sm text-gray-400 hover:text-rose-500 transition">
             <SettingsIcon className="w-5 h-5" />
           </button>
-          <button className="p-2 rounded-full bg-white shadow-sm text-gray-400 hover:text-emerald-500 transition">
+          <button className="p-2 rounded-full bg-white shadow-sm text-gray-400 hover:text-rose-500 transition">
             <DownloadIcon className="w-5 h-5" />
           </button>
         </div>

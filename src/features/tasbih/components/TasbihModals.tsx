@@ -22,10 +22,10 @@ export function GoalReachedModal({
         onClick={onClose}
       />
       <div className="relative bg-white p-8 rounded-3xl shadow-2xl flex flex-col items-center animate-in zoom-in-95 duration-300 w-64 text-center">
-        <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mb-5">
-          <CheckIcon className="w-8 h-8 text-[#064e3b]" strokeWidth={3} />
+        <div className="w-16 h-16 bg-rose-50 rounded-full flex items-center justify-center mb-5">
+          <CheckIcon className="w-8 h-8 text-[#4c0519]" strokeWidth={3} />
         </div>
-        <h3 className="text-lg font-bold text-[#064e3b] mb-2">
+        <h3 className="text-lg font-bold text-[#4c0519] mb-2">
           Alhamdulillah!
         </h3>
         <p className="text-[11px] font-medium text-gray-400">
@@ -83,7 +83,7 @@ export function HistoryModal({
                   className="flex items-center justify-between bg-gray-50/50 p-3 rounded-2xl border border-gray-100">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center border border-gray-100 shadow-sm">
-                      <span className="font-bold text-[#064e3b] text-base">
+                      <span className="font-bold text-[#4c0519] text-base">
                         {item.count}
                       </span>
                     </div>
@@ -151,13 +151,13 @@ export function SelectorModal({
                   onClick={() => onSelect(dzikir.id)}
                   className={`w-full p-4 rounded-2xl border text-left flex items-center justify-between transition-all active:scale-[0.98] ${
                     isActive
-                      ? "border-[#064e3b] bg-emerald-50/50"
-                      : "border-gray-100 bg-white hover:border-emerald-200"
+                      ? "border-[#4c0519] bg-rose-50/50"
+                      : "border-gray-100 bg-white hover:border-rose-200"
                   }`}>
                   <div className="flex flex-col gap-1">
                     <span
                       className={`text-sm font-bold ${
-                        isActive ? "text-[#064e3b]" : "text-gray-800"
+                        isActive ? "text-[#4c0519]" : "text-gray-800"
                       }`}>
                       {dzikir.label}
                     </span>
@@ -167,7 +167,7 @@ export function SelectorModal({
                         : "Tanpa Batas"}
                     </span>
                   </div>
-                  {isActive && <CheckIcon className="w-5 h-5 text-[#064e3b]" />}
+                  {isActive && <CheckIcon className="w-5 h-5 text-[#4c0519]" />}
                 </button>
               );
             })}
@@ -224,7 +224,7 @@ export function ResetModal({
             </button>
             <button
               onClick={onConfirm}
-              className="flex-1 py-3.5 rounded-xl bg-[#064e3b] text-white font-bold text-sm hover:bg-emerald-900 active:scale-95 transition-all shadow-sm">
+              className="flex-1 py-3.5 rounded-xl bg-[#4c0519] text-white font-bold text-sm hover:bg-rose-900 active:scale-95 transition-all shadow-sm">
               Ya, Simpan & Reset
             </button>
           </div>

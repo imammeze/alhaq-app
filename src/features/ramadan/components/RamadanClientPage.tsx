@@ -81,8 +81,8 @@ export default function RamadanClientPage({
           iconId: "book",
           title: "Tilawah 1 Juz",
           subtitle: "Target khatam Al-Quran",
-          bg: "bg-emerald-50",
-          color: "text-emerald-500",
+          bg: "bg-rose-50",
+          color: "text-rose-500",
         },
         {
           id: "sedekah",
@@ -172,8 +172,8 @@ export default function RamadanClientPage({
         iconId: data.iconId,
         title: data.title,
         subtitle: data.subtitle,
-        bg: "bg-emerald-50",
-        color: "text-emerald-600",
+        bg: "bg-rose-50",
+        color: "text-rose-600",
         isCustom: true,
       };
       setTargets((prev) => [...prev, newTarget]);
@@ -203,7 +203,7 @@ export default function RamadanClientPage({
       <RamadanHeader />
 
       <div className="px-5 mt-4">
-        <div className="bg-[#064e3b] rounded-3xl p-6 text-white relative overflow-hidden shadow-lg">
+        <div className="bg-[#4c0519] rounded-3xl p-6 text-white relative overflow-hidden shadow-lg">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
 
           <div className="flex justify-between items-start relative z-10">
@@ -213,7 +213,7 @@ export default function RamadanClientPage({
                 {todayData?.date.hijri.year || "1446"} H
               </span>
               <h2 className="text-3xl font-bold mb-1">Hari ke-{selectedDay}</h2>
-              <p className="text-xs text-emerald-200/80 font-medium">
+              <p className="text-xs text-rose-200/80 font-medium">
                 {todayData?.date.readable || "Memuat..."}
               </p>
             </div>
@@ -229,7 +229,7 @@ export default function RamadanClientPage({
                 <path
                   d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                   fill="none"
-                  stroke="#dcf59f"
+                  stroke="#fde047"
                   strokeWidth="4"
                   strokeDasharray="100, 100"
                   strokeDashoffset={strokeDashoffset}
@@ -246,7 +246,7 @@ export default function RamadanClientPage({
           <div className="mt-6 flex items-center gap-3 relative z-10">
             <div className="flex-1 bg-white/10 h-1.5 rounded-full overflow-hidden">
               <div
-                className="bg-[#dcf59f] h-full rounded-full transition-all duration-700 ease-out"
+                className="bg-[#fde047] h-full rounded-full transition-all duration-700 ease-out"
                 style={{ width: `${progressPercentage}%` }}
               />
             </div>
@@ -259,7 +259,7 @@ export default function RamadanClientPage({
           <h3 className="text-xs font-bold text-gray-800 uppercase tracking-wider">
             Pilih Hari
           </h3>
-          <span className="text-[10px] text-emerald-600 font-bold bg-emerald-50 px-2 py-1 rounded-md">
+          <span className="text-[10px] text-rose-600 font-bold bg-rose-50 px-2 py-1 rounded-md">
             {30 - selectedDay} Hari menuju Idul Fitri
           </span>
         </div>
@@ -277,15 +277,15 @@ export default function RamadanClientPage({
                 onClick={() => setSelectedDay(dayNum)}
                 className={`flex-none w-[60px] h-[70px] rounded-2xl flex flex-col items-center justify-center gap-1 border transition-all snap-center relative ${
                   isSelected
-                    ? "bg-[#064e3b] border-[#064e3b] text-white shadow-md scale-105"
-                    : "bg-white border-gray-100 text-gray-500 hover:border-emerald-200"
+                    ? "bg-[#4c0519] border-[#4c0519] text-white shadow-md scale-105"
+                    : "bg-white border-gray-100 text-gray-500 hover:border-rose-200"
                 }`}>
                 {hasProgress && !isSelected && (
-                  <div className="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  <div className="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-rose-400" />
                 )}
                 <span
                   className={`text-[9px] font-bold ${
-                    isSelected ? "text-emerald-300" : "text-gray-400"
+                    isSelected ? "text-rose-300" : "text-gray-400"
                   }`}>
                   H-{dayNum}
                 </span>
@@ -303,7 +303,7 @@ export default function RamadanClientPage({
           </h3>
           <button
             onClick={openAddModal}
-            className="px-3 py-1.5 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 active:scale-95 transition text-[10px] font-bold rounded-full flex items-center gap-1">
+            className="px-3 py-1.5 bg-rose-50 text-rose-700 hover:bg-rose-100 active:scale-95 transition text-[10px] font-bold rounded-full flex items-center gap-1">
             <PlusIcon className="w-3 h-3" /> Tambah
           </button>
         </div>
