@@ -94,7 +94,7 @@ export function TaskRow({
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400">
           <img
-            src="https://api.iconify.design/mingcute:mosque-line.svg?color=%239ca3af"
+            src="https://api.iconify.design/material-symbols/mosque-outline.svg?color=%239ca3af"
             className="w-4 h-4"
             alt="mosque"
           />
