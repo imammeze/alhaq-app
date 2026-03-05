@@ -23,7 +23,7 @@ export default function Page() {
   return (
     <div className="pb-24 bg-gray-50 min-h-screen">
       {/* Header */}
-      <header className="px-5 pt-6 pb-4 bg-white sticky top-0 z-10">
+      <header className="px-5 pt-6 pb-4 bg-white">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h1 className="text-xl font-bold text-gray-800">Akun Saya</h1>

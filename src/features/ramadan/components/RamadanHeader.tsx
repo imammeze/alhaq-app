@@ -2,7 +2,7 @@ import { SettingsIcon, DownloadIcon } from "lucide-react";
 
 export function RamadanHeader() {
   return (
-    <header className="px-5 pt-6 pb-4 bg-gray-50 sticky top-0 z-10">
+    <header className="px-5 pt-6 pb-4 bg-gray-50">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-xl font-bold text-gray-800">Ramadan Tracker</h1>

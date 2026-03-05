@@ -128,7 +128,7 @@ export default function ZakatClientPage({ goldPrice }: ZakatClientProps) {
 
   return (
     <div className="pb-24 bg-gray-50 min-h-screen">
-      <header className="px-5 pt-6 pb-4 flex items-center justify-between bg-white sticky top-0 z-10">
+      <header className="px-5 pt-6 pb-4 flex items-center justify-between bg-white">
         <div>
           <h1 className="text-lg font-bold text-gray-800">Kalkulator Zakat</h1>
           <p className="text-xs text-gray-500">Hitung & Catat Zakatmu</p>
