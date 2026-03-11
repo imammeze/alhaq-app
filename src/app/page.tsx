@@ -1,29 +1,12 @@
-"use client";
-
 import Header from "@/shared/components/Header";
-import HeroSection from "@/features/home/components/HeroSection";
-import DateCard from "@/features/home/components/DateCard";
-import QuickAccess from "@/features/home/components/QuickAccess";
-import PrayerSchedule from "@/features/home/components/PrayerSchedule";
 import EventSection from "@/features/home/components/EventSection";
-import { usePrayerTimes } from "@/features/prayer/hooks/usePrayerTimes";
+import HomeClientWrapper from "@/features/home/components/HomeClientWrapper";
 
 export default function HomePage() {
-  const { data, loading, city } = usePrayerTimes();
-
   return (
     <div className="pb-20 bg-gray-50 min-h-screen">
       <Header />
-
-      <HeroSection
-        data={data}
-        loading={loading}
-        city={city || "Mencari Lokasi..."}
-      />
-
-      <DateCard />
-      <QuickAccess />
-      <PrayerSchedule timings={data?.timings} />
+      <HomeClientWrapper />
       <EventSection />
     </div>
   );

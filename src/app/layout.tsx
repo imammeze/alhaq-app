@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import BottomNavigation from "@/components/BottomNavigation";
+import AuthProvider from "@/providers/AuthProvider";
 
 export const metadata: Metadata = {
   title: "My Alhaq App",
@@ -18,7 +19,7 @@ export default function RootLayout({
       <body>
         <div className="min-h-screen bg-gray-100">
           <div className="max-w-lg mx-auto relative bg-gray-50 min-h-screen shadow-2xl pb-20">
-            {children}
+            <AuthProvider>{children}</AuthProvider>
           </div>
 
           <BottomNavigation />
