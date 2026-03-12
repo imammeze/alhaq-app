@@ -1,5 +1,6 @@
-"use client";
-
+import Link from "next/link";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/lib/auth";
 import {
   UserIcon,
   BellIcon,
@@ -11,15 +12,21 @@ import {
   HelpCircleIcon,
   ShieldIcon,
   HeartIcon,
-  LogOutIcon,
+  LogInIcon,
   ChevronRightIcon,
   MapPinIcon,
   CameraIcon,
   CoffeeIcon,
   Trash2Icon,
 } from "lucide-react";
+import LogoutButton from "@/features/profile/components/LogoutButton";
 
-export default function Page() {
+export default async function Page() {
+  const session = await getServerSession(authOptions);
+
+  const user = session?.user;
+  const isLoggedIn = !!user;
+
   return (
     <div className="pb-24 bg-gray-50 min-h-screen">
       {/* Header */}
@@ -32,10 +39,16 @@ export default function Page() {
             </p>
           </div>
 
-          <button className="px-4 py-2 bg-[#0e2e25] text-white text-xs font-bold rounded-lg flex items-center gap-2 hover:bg-[#064e3b] transition-colors">
-            <LogOutIcon className="w-3 h-3" />
-            Login
-          </button>
+          {isLoggedIn ? (
+            <LogoutButton />
+          ) : (
+            <Link
+              href="/login"
+              className="px-4 py-2 bg-[#881337] text-white text-xs font-bold rounded-lg flex items-center gap-2 hover:bg-[#4c0519] transition-colors">
+              <LogInIcon className="w-3 h-3" />
+              Login
+            </Link>
+          )}
         </div>
 
         {/* Profile Card */}
@@ -44,7 +57,7 @@ export default function Page() {
             <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400">
               <UserIcon className="w-8 h-8" />
             </div>
-            <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-[#2e0e0e] rounded-lg flex items-center justify-center text-white border-2 border-white">
+            <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-[#2e0e0e] rounded-lg flex items-center justify-center text-white border-2 border-white cursor-pointer hover:bg-gray-800 transition">
               <CameraIcon className="w-3 h-3" />
             </div>
           </div>
@@ -54,11 +67,11 @@ export default function Page() {
               ASSALAMU'ALAIKUM,
             </p>
             <h2 className="text-lg font-bold text-gray-900 leading-tight">
-              Hamba Allah
+              {user?.name || "Hamba Allah"}
             </h2>
             <div className="flex items-center gap-1 mt-1 text-gray-400">
               <MapPinIcon className="w-3 h-3" />
-              <span className="text-xs">Purwokerto, ID</span>
+              <span className="text-xs">{user?.email || "Belum masuk"}</span>
             </div>
           </div>
         </div>
@@ -112,34 +125,32 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Delete */}
-      <div className="px-5 mt-6 mb-8">
-        <button className="w-full py-3 bg-red-50 rounded-2xl text-red-500 text-xs font-bold flex items-center justify-center gap-2 hover:bg-red-100 transition-colors">
-          <Trash2Icon className="w-4 h-4" />
-          Hapus Data & Reset
-        </button>
+      {isLoggedIn && (
+        <div className="px-5 mt-6 mb-8">
+          <button className="w-full py-3 bg-red-50 rounded-2xl text-red-500 text-xs font-bold flex items-center justify-center gap-2 hover:bg-red-100 transition-colors">
+            <Trash2Icon className="w-4 h-4" />
+            Hapus Data & Akun
+          </button>
+        </div>
+      )}
 
+      <div className="px-5 mb-8">
         <p className="text-[10px] text-gray-400 text-center mt-6">
-          Masjid Al Haq @2026 | Developed by
-          <span className="font-bold text-[#4c0519]">sobatberbagi.com</span>
+          Masjid Al Haq @2026 | Developed by{" "}
+          <span className="font-bold text-[#881337]">sobatberbagi.com</span>
         </p>
       </div>
     </div>
   );
 }
 
-type SectionProps = {
-  title: string;
-  children: React.ReactNode;
-};
-
+type SectionProps = { title: string; children: React.ReactNode };
 function Section({ title, children }: SectionProps) {
   return (
     <div className="px-5 mt-6">
       <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
         {title}
       </h3>
-
       <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
         {children}
       </div>
@@ -153,7 +164,6 @@ type SettingItemProps = {
   value?: string;
   border?: boolean;
 };
-
 function SettingItem({
   icon: Icon,
   label,
@@ -169,13 +179,11 @@ function SettingItem({
         <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center text-gray-600">
           <Icon className="w-5 h-5" />
         </div>
-
         <div>
           <h4 className="text-sm font-bold text-gray-800">{label}</h4>
           {value && <p className="text-[10px] text-gray-400 mt-0.5">{value}</p>}
         </div>
       </div>
-
       <ChevronRightIcon className="w-5 h-5 text-gray-300" />
     </div>
   );
